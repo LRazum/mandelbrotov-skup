@@ -1,0 +1,24 @@
+# Lokalno okruženje i tajne
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+node_modules/
+
+# Predmemorije i generirani izlazi
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.cache/
+coverage/
+.coverage
+dist/
+build/
+
+# Privremene datoteke urednika i sustava
+.DS_Store
+Thumbs.db
+*.swp
+*~
