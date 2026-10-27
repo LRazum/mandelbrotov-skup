@@ -13,7 +13,6 @@ site_dir: ../build/web
 nav:
   - Uvod: index.md
   - Matematička podloga: podloga.md
-  - Matematički rezultat: rezultat.md
   - Algoritmi:
       - Escape time algoritam: algoritmi/escape-time.md
       - Algoritam-2: algoritmi/algoritam-2.md
