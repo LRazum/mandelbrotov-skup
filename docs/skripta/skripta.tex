@@ -1,0 +1,466 @@
+% Radna skripta za učenje teorije seminara.
+%
+% Objašnjenja, definicije podloge, primjeri, kontrolna pitanja i bibliografija
+% izrađeni su uz AI pomoć kao autorov materijal za učenje (vidi
+% docs/AI_UPORABA.md). Nisu tekst za predaju i ne prenose se u seminar.
+% Iskaz i skicu dokaza kriterija bijega (odjeljak 5), koji su matematički
+% rezultat seminara, autor izrađuje sam.
+%
+% Prevođenje: latexmk -pdf skripta
+% ili: pdflatex skripta && bibtex skripta && pdflatex skripta && pdflatex skripta
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[croatian]{babel}
+\usepackage{lmodern}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+
+\theoremstyle{definition}
+\newtheorem{definicija}{Definicija}[section]
+\newtheorem{primjer}[definicija]{Primjer}
+\newtheorem*{napomena}{Napomena}
+\theoremstyle{plain}
+\newtheorem{teorem}[definicija]{Teorem}
+\newtheorem{propozicija}[definicija]{Propozicija}
+\newtheorem{lema}[definicija]{Lema}
+\newtheorem{korolar}[definicija]{Korolar}
+
+% Uputa za čitanje: gdje i što pročitati.
+\newenvironment{citaj}
+  {\par\medskip\noindent\textbf{\color{blue!60!black}Pročitaj.}\ }
+  {\par\medskip}
+
+% Kontrolna pitanja za samoprovjeru.
+\newenvironment{pitanja}
+  {\par\noindent\textbf{\color{orange!70!black}Provjeri razumijevanje.}
+   \begin{enumerate}[label=\arabic*., nosep]}
+  {\end{enumerate}\medskip}
+
+% Mjesto za autorov tekst.
+\newcommand{\upisi}[1]{{\color{gray}\itshape [Upiši: #1]}}
+
+% Mjesto u izvoru na koje se tvrdnja oslanja.
+\newcommand{\mjesto}[2]{{\small(\cite{#1}, #2)}}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+
+\title{Mandelbrotov skup\\\large Radna skripta za učenje teorije}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Kako koristiti skriptu}
+
+Skripta je vodič kroz teoriju potrebnu za seminar, poredan od predznanja
+prema metodama vizualizacije. Objašnjenja služe za učenje; svaku tvrdnju
+koju ćeš koristiti u seminaru pročitaj u navedenom izvoru, zabilježi točno
+mjesto u \texttt{docs/IZVORI.md} i u radu je napiši svojim riječima.
+
+Odjeljak~\ref{sec:kriterij} namjerno je prazan: iskaz i skica dokaza kriterija
+bijega matematički su rezultat seminara koji izrađuješ sam. Rješenja primjera
+nalaze se u dodatku; pokušaj ih najprije sam.
+
+Odjeljak~\ref{sec:udaljenost} obradi samo ako treća metoda uđe u opseg
+(odluka do 5.~11.~2026.).
+
+\tableofcontents
+
+% ---------------------------------------------------------------------------
+\section{Predznanje: kompleksni brojevi}
+\label{sec:kompleksni}
+
+\begin{citaj}
+Bilo koji udžbenik analize ili kompleksne analize koji koristiš na studiju:
+geometrijska interpretacija, polarni oblik i nejednakost trokuta.
+\end{citaj}
+
+Kompleksan broj $z = x + iy$ poistovjećujemo s točkom $(x, y)$ ravnine. Tako
+je skup $\C$ ravnina, a podskupovi od $\C$ su likovi koje možemo nacrtati.
+
+\begin{definicija}[Modul]
+Modul broja $z = x + iy$ jest $|z| = \sqrt{x^2 + y^2}$, odnosno udaljenost
+točke $z$ od ishodišta. Za $z, w \in \C$ broj $|z - w|$ udaljenost je
+točaka $z$ i $w$.
+\end{definicija}
+
+Svaki $z \neq 0$ može se zapisati u polarnom obliku $z = r(\cos\varphi +
+i\sin\varphi)$, gdje je $r = |z|$, a $\varphi$ argument broja $z$. Pri
+množenju se moduli množe, a argumenti zbrajaju. Posebno, pri kvadriranju
+vrijedi $|z^2| = |z|^2$, a argument se udvostručuje.
+
+\begin{propozicija}[Nejednakost trokuta]
+Za sve $z, w \in \C$ vrijedi
+\[
+  |z + w| \le |z| + |w|
+  \qquad\text{i}\qquad
+  |z + w| \ge \bigl|\, |z| - |w| \,\bigr|.
+\]
+\end{propozicija}
+
+Prva nejednakost daje \emph{gornju}, a druga, obratna nejednakost trokuta,
+\emph{donju} ogradu za modul zbroja.
+
+\begin{pitanja}
+  \item Kako se pri ponovljenom kvadriranju ponašaju brojevi modula manjeg od
+        $1$, jednakog $1$ i većeg od $1$?
+  \item Kada u prvoj nejednakosti trokuta vrijedi jednakost? Nacrtaj.
+  \item Koja od dviju nejednakosti ti treba ako želiš pokazati da je neki
+        modul \emph{velik}?
+\end{pitanja}
+
+% ---------------------------------------------------------------------------
+\section{Iteracija i orbite}
+\label{sec:orbite}
+
+\begin{citaj}
+Devaney, uvodna poglavlja o iteraciji funkcija i orbitama
+\cite{devaney_first_course}; za intuiciju video \cite{numberphile_mandelbrot}.
+\end{citaj}
+
+Cijeli seminar vrti se oko jedne familije polinoma: za svaki parametar
+$c \in \C$ promatramo
+\[
+  f_c \colon \C \to \C, \qquad f_c(z) = z^2 + c.
+\]
+S $f_c^{\,n}$ označavamo $n$-struku kompoziciju: $f_c^{\,0} = \mathrm{id}$,
+$f_c^{\,n+1} = f_c \circ f_c^{\,n}$. To nije $n$-ta potencija.
+
+\begin{definicija}[Orbita]
+Orbita točke $z_0 \in \C$ pri preslikavanju $f_c$ jest niz
+$z_0, z_1, z_2, \dots$ zadan s $z_{n+1} = f_c(z_n)$, odnosno
+$z_n = f_c^{\,n}(z_0)$.
+\end{definicija}
+
+\begin{definicija}[Fiksna, periodička i predperiodička točka]
+Točka $z$ je \emph{fiksna} ako je $f_c(z) = z$, a \emph{periodička} s
+periodom $p \ge 1$ ako je $f_c^{\,p}(z) = z$ i $p$ je najmanji takav broj.
+Točka je \emph{predperiodička} ako nije periodička, ali je neki član njezine
+orbite periodički.
+\end{definicija}
+
+\begin{definicija}[Omeđena orbita i bijeg]
+Orbita $(z_n)$ je \emph{omeđena} ako postoji $R > 0$ takav da je
+$|z_n| \le R$ za sve $n$. Kažemo da orbita \emph{bježi u beskonačnost} ako
+$|z_n| \to \infty$.
+\end{definicija}
+
+\begin{napomena}
+Omeđenost i bijeg nisu \emph{a priori} jedine mogućnosti: neomeđen niz ne mora
+težiti u beskonačnost. Za familiju $f_c$ ta se međumogućnost ne pojavljuje,
+što je jedna od posljedica kriterija iz odjeljka~\ref{sec:kriterij}.
+\end{napomena}
+
+\begin{primjer}[Orbite točke $0$]
+\label{pr:orbite}
+Za $c = 0, -1, 1, i, -2$ izračunaj prvih pet članova orbite točke $0$ pri
+$f_c$. Je li orbita omeđena? Je li $0$ fiksna, periodička ili predperiodička
+točka? Rješenje je u dodatku~\ref{dod:rjesenja}.
+\end{primjer}
+
+\begin{pitanja}
+  \item Zašto je orbita potpuno određena početnom točkom i parametrom $c$?
+  \item Može li orbita biti omeđena, a da nije ni periodička ni
+        predperiodička? Gdje si to pročitao?
+\end{pitanja}
+
+% ---------------------------------------------------------------------------
+\section{Ispunjeni Julijev skup i Julijev skup}
+\label{sec:julia}
+
+\begin{citaj}
+Douady i Hubbard, pogl.~1 i pogl.~3, prop.~3.1 \cite{douady_hubbard_orsay};
+slajdovi \cite{rosehulman_julia}; Devaney, poglavlja o Julijevim skupovima
+\cite{devaney_first_course}.
+\end{citaj}
+
+Do sada je parametar $c$ bio fiksan, a mijenjali smo početnu točku. Skupovi u
+ovom odjeljku žive u \emph{dinamičkoj ravnini} varijable $z$; za svaki $c$
+dobivamo drugi skup.
+
+\begin{definicija}[Ispunjeni Julijev skup]
+\label{def:Kc}
+Ispunjeni Julijev skup polinoma $f_c$ jest skup početnih točaka čija orbita
+ne bježi u beskonačnost:
+\[
+  K_c = \{\, z \in \C : f_c^{\,n}(z) \not\to \infty \,\}.
+\]
+\end{definicija}
+\mjesto{douady_hubbard_orsay}{pogl.~1}
+
+\begin{definicija}[Julijev skup]
+Julijev skup jest rub ispunjenog Julijeva skupa, $J_c = \partial K_c$.
+\end{definicija}
+
+Skup $K_c$ je kompaktan. Intuitivno, $J_c$ je granica između točaka koje
+ostaju i točaka koje bježe: u svakoj okolini točke iz $J_c$ ima i jednih i
+drugih, pa se tamo ponašanje orbita mijenja naglo.
+
+\begin{teorem}[Fatou, Julia, 1919.]
+\label{tm:dihotomija}
+Ako $0 \in K_c$, skup $K_c$ je povezan. Ako $0 \notin K_c$, skup $K_c$ je
+homeomorfan Cantorovu skupu.
+\end{teorem}
+\mjesto{douady_hubbard_orsay}{pogl.~1 i pogl.~3, prop.~3.1}
+
+Točka $0$ je istaknuta zato što je to jedina \emph{kritična točka} polinoma
+$f_c$, točka u kojoj je $f_c'(z) = 2z$ jednako nuli. Teorem kaže da ponašanje
+te jedne orbite određuje oblik cijelog skupa $K_c$.
+
+\begin{pitanja}
+  \item Nacrtaj (grubo) $K_0$. Kakvu orbitu ima točka unutar, a kakvu točka
+        izvan jediničnog kruga?
+  \item Što je kritična točka i zašto je $f_c$ ima točno jednu?
+  \item Nalazi li se dokaz teorema~\ref{tm:dihotomija} u razini seminara?
+        Što od njega trebaš znati, a što smiješ samo citirati?
+\end{pitanja}
+
+% ---------------------------------------------------------------------------
+\section{Mandelbrotov skup}
+\label{sec:mandelbrot}
+
+\begin{citaj}
+Douady i Hubbard, pogl.~1 \cite{douady_hubbard_orsay}; Branner
+\cite{branner1989}; za povijest Mandelbrot \cite{mandelbrot1980}.
+\end{citaj}
+
+Sada prelazimo u \emph{ravninu parametra}: svaka točka $c$ predstavlja cijeli
+polinom $f_c$. Mandelbrotov skup je ,,katalog'' tih polinoma prema obliku
+njihovih Julijevih skupova.
+
+\begin{definicija}[Mandelbrotov skup]
+\label{def:M}
+Mandelbrotov skup jest skup parametara za koje je ispunjeni Julijev skup
+povezan:
+\[
+  M = \{\, c \in \C : K_c \text{ je povezan} \,\}.
+\]
+\end{definicija}
+\mjesto{douady_hubbard_orsay}{pogl.~1}
+
+\begin{propozicija}[Karakterizacija preko orbite točke $0$]
+\label{prop:orbita0}
+Vrijedi
+\[
+  M = \{\, c \in \C : f_c^{\,n}(0) \not\to \infty \,\}.
+\]
+\end{propozicija}
+
+Ova karakterizacija izravno slijedi iz definicije~\ref{def:Kc} i
+teorema~\ref{tm:dihotomija}: orbita točke $0$ ne bježi točno onda kada je
+$0 \in K_c$, a to je po teoremu točno onda kada je $K_c$ povezan.
+Karakterizacija je ključna za računalo: umjesto ispitivanja povezanosti
+beskonačnog skupa dovoljno je pratiti \emph{jednu} orbitu.
+
+\begin{propozicija}[Topološka svojstva]
+\label{prop:topologija}
+Skup $M$ je kompaktan i povezan.
+\end{propozicija}
+\mjesto{douady_hubbard_orsay}{pogl.~1}
+
+Povezanost skupa $M$ dokazali su Douady i Hubbard; dokaz je izvan razine
+seminara, ali je rezultat važan za metodu iz odjeljka~\ref{sec:mariani}.
+
+\begin{napomena}[Mandelbrotova izvorna parametrizacija]
+Mandelbrot je 1980.\ promatrao preslikavanja $z \mapsto \lambda z(1 - z)$
+\cite{mandelbrot1980}. Douady i Hubbard navode da je familija
+$z \mapsto \lambda z + z^2$ konjugirana familiji $f_c$ za
+$c = \lambda/2 - \lambda^2/4$ \mjesto{douady_hubbard_orsay}{pogl.~3}.
+Svaki kvadratni polinom konjugiran je točno jednom $f_c$, pa se slike u
+različitim parametrizacijama razlikuju samo promjenom koordinata.
+\end{napomena}
+
+\begin{pitanja}
+  \item Pripada li $c = 1$ skupu $M$? A $c = i$? Iskoristi primjer~\ref{pr:orbite}.
+  \item Zašto je propozicija~\ref{prop:orbita0} prirodnija za računalo od
+        definicije~\ref{def:M}?
+  \item Što znači da su dva preslikavanja konjugirana i zašto konjugirana
+        preslikavanja imaju ,,istu'' dinamiku?
+  \item Provjeri da familija $z \mapsto \lambda z(1-z)$ daje istu vezu s $c$
+        kao familija $z \mapsto \lambda z + z^2$. (Uputa: multiplikator fiksne
+        točke $0$.)
+\end{pitanja}
+
+% ---------------------------------------------------------------------------
+\section{Kriterij bijega (matematički rezultat seminara)}
+\label{sec:kriterij}
+
+\begin{citaj}
+Slajdovi \cite{rosehulman_julia}; Devaney \cite{devaney_first_course};
+Branner \cite{branner1989}. Za predaju je potreban primarni izvor u kojem si
+sam pronašao iskaz; zabilježi ga ovdje.
+\end{citaj}
+
+Ovaj odjeljak izrađuješ sam: on je matematički rezultat seminara.
+
+\begin{lema}
+\upisi{pomoćna tvrdnja o rastu modula}
+\end{lema}
+
+\begin{teorem}[Kriterij bijega]
+\label{tm:kriterij}
+\upisi{iskaz}
+\end{teorem}
+
+\begin{proof}[Skica dokaza]
+\upisi{skica dokaza svojim riječima}
+\end{proof}
+
+\begin{korolar}
+\upisi{posljedica za položaj skupa $M$ u ravnini}
+\end{korolar}
+
+\begin{pitanja}
+  \item Koja nejednakost iz odjeljka~\ref{sec:kompleksni} nosi dokaz?
+  \item Razlikuje li se argument za slučaj $|c| > 2$ od slučaja $|c| \le 2$?
+  \item Zašto je za točku $c = -2$ bitno je li uvjet strog?
+  \item Kako iz kriterija slijedi da napomena iz odjeljka~\ref{sec:orbite}
+        vrijedi za orbitu točke $0$?
+  \item Što kriterij omogućuje u algoritmu, a što \emph{ne} jamči?
+\end{pitanja}
+
+% ---------------------------------------------------------------------------
+\section{Od teorije do slike: postupak vremena bijega}
+\label{sec:escape}
+
+\begin{citaj}
+Heiland-Allen, uvod i odjeljak~1 \cite{heilandallen_escape}; Peitgen i Saupe,
+pogl.~4 i dodatak~D \cite{peitgen_saupe1988}.
+\end{citaj}
+
+Računalo ne može izračunati beskonačnu orbitu. Postupak vremena bijega zato
+radi s dvjema konačnim veličinama: pragom $R$ koji opravdava
+teorem~\ref{tm:kriterij} i gornjom granicom $N$ broja iteracija.
+
+\begin{definicija}[Vrijeme bijega]
+Za parametar $c$, prag $R$ i granicu $N$ vrijeme bijega jest najmanji
+$n \le N$ za koji je $|f_c^{\,n}(0)| > R$. Ako takav $n$ ne postoji, kažemo
+da točka nije pobjegla u $N$ iteracija.
+\end{definicija}
+
+Slika nastaje tako da se pravokutnik ravnine parametra podijeli na rešetku
+točaka, po jedna za svaki piksel, i svakoj se izračuna vrijeme bijega.
+Točke koje nisu pobjegle obično se boje crno, a ostale bojom koja ovisi o
+vremenu bijega.
+
+\begin{napomena}[Ograničenja]
+Ako je $R$ odabran u skladu s teoremom~\ref{tm:kriterij}, zaključak
+,,pobjegla je'' pouzdan je dokaz da $c \notin M$. Zaključak ,,nije pobjegla u
+$N$ iteracija'' to nije: točka može pobjeći tek nakon $N$ koraka. Crni dio
+slike zato je aproksimacija skupa $M$ \emph{izvana}, koja se s rastom $N$
+smanjuje. Dodatna su ograničenja konačna rezolucija rešetke i aritmetika s
+pomičnim zarezom.
+\end{napomena}
+
+\begin{pitanja}
+  \item Kako izbor $N$ utječe na sliku, a kako na vrijeme izračuna? Gdje se
+        na slici razlika najviše vidi?
+  \item Zašto broj računskih operacija ovisi o tome koliko je slike crno?
+  \item Smije li se umjesto $|z| > R$ provjeravati $|z|^2 > R^2$? Zašto bi
+        to bilo korisno?
+\end{pitanja}
+
+% ---------------------------------------------------------------------------
+\section{Postupak Mariani--Silver}
+\label{sec:mariani}
+
+\begin{citaj}
+Mariani, odjeljci o algoritmu i njegovim ograničenjima \cite{mariani2021}.
+\end{citaj}
+
+Postupak vremena bijega računa svaki piksel posebno, a najskuplji su upravo
+crni pikseli, kojima treba svih $N$ iteracija. Postupak Mariani--Silver
+pokušava izbjeći računanje velikih jednoličnih područja.
+
+Ideja: za pravokutnik se izračunaju samo pikseli na njegovu rubu. Ako svi
+rubni pikseli imaju istu vrijednost, cijela se unutrašnjost popuni tom
+vrijednošću bez računanja. Inače se pravokutnik podijeli na manje i postupak
+se rekurzivno ponovi, sve dok pravokutnici ne postanu dovoljno mali da se
+izračunaju izravno.
+
+\begin{napomena}[Opravdanje i ograničenje]
+Ideja se oslanja na topološka svojstva skupa $M$
+(propozicija~\ref{prop:topologija} i srodni rezultati Douadyja i Hubbarda):
+skup ne može imati ,,otok'' ili ,,rupu'' koji rub pravokutnika ne bi
+osjetio. Postupak, međutim, ne provjerava \emph{neprekidni} rub nego konačno
+mnogo rubnih piksela, pa uski dio skupa može proći između dvaju uzoraka.
+Rezultat zato ne mora biti identičan postupku vremena bijega.
+\end{napomena}
+
+\begin{pitanja}
+  \item Na koje se točno svojstvo skupa $M$ Mariani poziva? Je li ono dokazano
+        za sam skup $M$, za skupove točaka s jednakim vremenom bijega ili ni
+        za jedno? Gdje to piše?
+  \item Nacrtaj primjer u kojem uski izdanak skupa prolazi kroz pravokutnik,
+        a nijedan rubni piksel ga ne pogađa.
+  \item Što ćeš mjeriti da pokažeš prednost nad prvim postupkom: vrijeme,
+        broj iteracija ili broj izračunatih piksela? Što je poštenija mjera?
+  \item Je li ovo različit algoritam ili inačica postupka vremena bijega?
+        Obrazloži.
+\end{pitanja}
+
+% ---------------------------------------------------------------------------
+\section{Opcionalno: procjena vanjske udaljenosti}
+\label{sec:udaljenost}
+
+\begin{citaj}
+Vepstas \cite{vepstas_derivatives}; Heiland-Allen, dio o Mandelbrotovu skupu
+i odjeljak~5.3 \cite{heilandallen_de}; Peitgen i Saupe, pogl.~4
+\cite{peitgen_saupe1988}.
+\end{citaj}
+
+Postupak vremena bijega za točku izvan skupa kaže samo koliko je brzo
+pobjegla. Procjena vanjske udaljenosti uz orbitu računa i njezinu derivaciju
+po parametru $c$ te iz njih procjenjuje koliko je točka udaljena od skupa $M$.
+Time se tanki izdanci skupa mogu prikazati i kada su uži od piksela.
+
+Za ovu metodu potrebni su derivacija kompleksne funkcije, rekurzija za
+derivaciju orbite te rezultat iz kompleksne analize koji opravdava procjenu.
+Formule i pretpostavke pročitaj u izvorima.
+
+\begin{pitanja}
+  \item Koji teorem stoji iza procjene i je li ona gornja, donja ili samo
+        približna ocjena udaljenosti?
+  \item Koja se dodatna veličina računa uz orbitu i koliko to povećava cijenu
+        jedne iteracije?
+  \item Koju prednost pred prvim dvama postupcima možeš pokazati na slici?
+\end{pitanja}
+
+% ---------------------------------------------------------------------------
+\appendix
+\section{Rješenja primjera}
+\label{dod:rjesenja}
+
+Orbite točke $0$ iz primjera~\ref{pr:orbite}:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{c|l|l}
+  $c$ & $z_0, z_1, z_2, z_3, z_4, z_5$ & ponašanje \\ \hline
+  $0$  & $0, 0, 0, 0, 0, 0$ & $0$ je fiksna točka; omeđena \\
+  $-1$ & $0, -1, 0, -1, 0, -1$ & $0$ je periodička s periodom $2$; omeđena \\
+  $1$  & $0, 1, 2, 5, 26, 677$ & bježi u beskonačnost \\
+  $i$  & $0, i, -1+i, -i, -1+i, -i$ & $0$ je predperiodička; omeđena \\
+  $-2$ & $0, -2, 2, 2, 2, 2$ & $0$ je predperiodička; omeđena \\
+\end{tabular}
+\end{center}
+
+Za $c = i$: $(-1+i)^2 + i = -2i + i = -i$ i $(-i)^2 + i = -1 + i$, pa se
+orbita od $z_2$ nadalje ponavlja s periodom $2$. Za $c = -2$ orbita stiže u
+fiksnu točku $2$; parametar $-2$ leži na rubu skupa $M$, što će biti važno
+pri odabiru strogog ili nestrogog uvjeta u kriteriju bijega.
+
+% ---------------------------------------------------------------------------
+\bibliographystyle{plain}
+\bibliography{literatura}
+
+\end{document}

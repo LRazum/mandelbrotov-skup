@@ -30,10 +30,22 @@ autor i doprinositelj jest vlasnik repozitorija.
 ## Trenutačno stanje
 
 Postavljena je organizacija rada. Tekst, matematički rezultat, algoritmi,
-slajdovi i web-stranica još nisu izrađeni. Jezik implementacije, format slajdova
-i alat za izradu weba još nisu odabrani; naredbe za pokretanje dodaju se nakon
-odabira i provjere.
+slajdovi i web-stranica još nisu izrađeni. Jezik implementacije jest Python;
+format slajdova i alat za izradu weba još nisu odabrani.
 
 AI smije pomagati u dopuštenim pripremnim i tehničkim poslovima. Prema pravilima
 kolegija autor sam piše tekst, matematiku i algoritamski kôd rada. Pojedinosti
 su u [AGENTS.md](AGENTS.md), a popis dokumentacije u [kazalu](docs/INDEX.md).
+
+## Pokretanje
+
+Potreban je Python 3.12 s modulom `venv` (na Ubuntuu paket `python3.12-venv`).
+
+```bash
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+.venv/bin/pytest
+```
+
+Ovisnosti su u `requirements.txt`, a postavke testova u `pyproject.toml`;
+testovi u `tests/` uvoze module izravno iz `src/`.

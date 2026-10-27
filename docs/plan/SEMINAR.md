@@ -1,8 +1,8 @@
 # Plan seminara
 
 Ovo je plan rada, a ne tekst, matematički izvod ili prezentacija za predaju.
-Stanje na dan 17. listopada 2026.: postavljena je organizacija repozitorija;
-sadržaj seminara još nije izrađen.
+Stanje na dan 25. listopada 2026.: postavljena je organizacija repozitorija i
+poznati su rokovi; sadržaj seminara još nije izrađen.
 
 ## Cilj i granice opsega
 
@@ -21,10 +21,10 @@ Autor treba moći objasniti svaki korak bez oslanjanja na AI-generirani kôd.
 | --- | --- |
 | Konačne dvije metode i moguća treća | Odabrati nakon čitanja literature; postupno povećanje težine i mogućnost samostalne reprodukcije. |
 | Matematički rezultat | Odabrati rezultat povezan s vizualizacijom, primjerice temu kriterija bijega; autor sam piše iskaz i skicu dokaza. |
-| Jezik implementacije | Otvoreno; prednost jeziku koji autor poznaje i koji ne skriva postupak iza gotove biblioteke. |
+| Jezik implementacije | Odlučeno 25. 10. 2026.: Python 3.12, `pytest` za provjere i `matplotlib` za prikaz. Prvu inačicu pisati bez vektorizacije kako bi svaki korak postupka bio vidljiv. |
 | Izrada weba i format slajdova | Otvoreno; odabrati jednostavan alat s dobrim prikazom matematike i koda. |
 | Bibliografski stil | Otvoreno; jedan dosljedan stil za web, slajdove i tuđe materijale. |
-| Trajanje i rok izlaganja | Nisu dostavljeni; opseg prilagoditi kada budu poznati. |
+| Trajanje i rok izlaganja | Odlučeno 25. 10. 2026. prema autorovoj informaciji: predaja rada u četvrtak 12. 11. 2026., izlaganje u petak 13. 11. 2026. u trajanju od 45 minuta, uključujući zadatke i pitanja studentima. |
 
 ## Kandidati za postupno učenje
 
@@ -71,6 +71,27 @@ Plan uloga, bez napisanog sadržaja: 1. naslov i cilj; 2. motivacija;
 
 To je početna raspodjela, a ne izrađena prezentacija. Ako sadržaj nije čitljiv,
 podijeliti ga na dodatne slajdove; treća metoda traži prostor u rasporedu.
+
+## Vremenski raspored
+
+Okvirni raspored do predaje 12. 11. 2026. Svaka faza završava kriterijem iz
+popisa koraka u nastavku; kašnjenje se nadoknađuje smanjenjem opsega, a ne
+preskakanjem provjera.
+
+| Razdoblje | Cilj faze |
+| --- | --- |
+| 25. – 28. 10. | Literatura i odabir opsega: primarni izvori, matematički rezultat, jezik i alati. |
+| 29. 10. – 1. 11. | Matematička podloga i skica dokaza; prva metoda s provjerama. |
+| 2. – 5. 11. | Druga metoda i usporedba s prvom. Do 5. 11. odluka o trećoj metodi. |
+| 6. – 9. 11. | Tekst web-rada, slajdovi i zadatak za slušatelje. |
+| 10. – 11. 11. | Pregled jezika, prikaza formula, referenci i odjeljka o AI-ju; proba izlaganja. |
+| 12. 11. | Predaja rada. |
+| 13. 11. | Izlaganje od 45 minuta. |
+
+Izlaganje od 45 minuta s pitanjima i zadacima vjerojatno traži znatno više od
+minimalnih deset slajdova. Raspodjelu vremena po cjelinama autor određuje nakon
+odabira opsega i provjerava na probi. Treća metoda ulazi u opseg samo ako su prve
+dvije dovršene i provjerene do 5. 11.
 
 ## Koraci i kriteriji gotovosti
 

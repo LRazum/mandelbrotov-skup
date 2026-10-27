@@ -22,3 +22,14 @@ build/
 Thumbs.db
 *.swp
 *~
+
+# Pomoćne datoteke LaTeX-a
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.toc
+*.synctex.gz
