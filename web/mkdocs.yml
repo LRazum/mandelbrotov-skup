@@ -16,7 +16,6 @@ nav:
   - Algoritmi:
       - Escape time algoritam: algoritmi/escape-time.md
       - Mariani-Silver algoritam: algoritmi/mariani-silver.md
-  - Usporedba i ograničenja: usporedba.md
   - Zadatak za slušatelje: zadatak.md
   - Literatura: literatura.md
   - Uporaba umjetne inteligencije: uporaba-ai.md
