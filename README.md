@@ -22,7 +22,6 @@ autor i doprinositelj jest vlasnik repozitorija.
 | `seminar/` | Autorov tekst i matematika za web-stranicu rada. |
 | `prezentacija/` | Autorovi izvori slajdova i materijali za izlaganje. |
 | `src/` | Autorove implementacije algoritama. |
-| `tests/` | Provjere algoritama, odvojene od implementacije. |
 | `examples/` | Primjeri pokretanja i parametri demonstracija. |
 | `web/` | Tehnička izvedba web-stranice, odvojena od sadržaja i algoritama. |
 | `assets/` | Slike i drugi materijali s evidentiranim podrijetlom. |
@@ -44,8 +43,7 @@ Potreban je Python 3.12 s modulom `venv` (na Ubuntuu paket `python3.12-venv`).
 ```bash
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
-.venv/bin/pytest
+.venv/bin/python src/mandelbrot/escape_time.py
 ```
 
-Ovisnosti su u `requirements.txt`, a postavke testova u `pyproject.toml`;
-testovi u `tests/` uvoze module izravno iz `src/`.
+Ovisnosti su u `requirements.txt`.
