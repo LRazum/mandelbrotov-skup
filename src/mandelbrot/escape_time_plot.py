@@ -13,11 +13,11 @@ def escape_time_plot(W, H, a_min, a_max, b_min, b_max, MAX_ITER):
     paleta = plt.get_cmap("inferno")
 
 
-    for q in range(0, H-1):
+    for q in range(0, H):
 
         b = b_max - ((q + 0.5) / H) * (b_max - b_min)
 
-        for p in range(0, W-1):
+        for p in range(0, W):
 
             a = a_min + ((p + 0.5) / W) * (a_max - a_min)
 
