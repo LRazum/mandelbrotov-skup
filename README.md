@@ -44,7 +44,7 @@ Potreban je Python 3.12 s modulom `venv` (na Ubuntuu paket `python3.12-venv`).
 ```bash
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
-.venv/bin/python src/mandelbrot/escape_time.py
+PYTHONPATH=src .venv/bin/python examples/escape_time_plot.py
 ```
 
 Ovisnosti su u `requirements.txt`.

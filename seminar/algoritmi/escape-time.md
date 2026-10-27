@@ -63,6 +63,10 @@ Ovime smo uspjeli konkretizirati dio kompleksne ravnine u nešto s čime računa
 --8<-- "src/mandelbrot/escape_time.py"
 ```
 
+```python title="src/mandelbrot/escape_time_plot.py"
+--8<-- "src/mandelbrot/escape_time_plot.py"
+```
+
 <figure markdown="span">
   ![Mandelbrotov skup iscrtan escape time algoritmom](../assets/2400x1800.png)
   <figcaption>Rezolucija 2400 × 1800</figcaption>
