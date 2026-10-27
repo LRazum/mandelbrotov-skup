@@ -45,11 +45,14 @@ Ovime smo se oslobodili kompleksnog računa, u svakom smislu, račun možemo oba
  
 Slike na računalu kao takve su diskretni objekti tj. sastoje se od konačno mnogo piksela. Novi problem je kako pretvoriti piksel u kompleksan broj. Prvo definiramo pravokutni dio kompleksne ravnine koji želimo prikazati tj. odabiremo brojeve $a_{min}, a_{max}$ i $b_{min}, b_{max}$ Nakon toga biramo rezoluciju tojest broj piksela koji želimo prikazati u tom pravokutniku. Svaka slika ima širinu $W$ i visinu $H$. Piksel ćemo prikazivati kao uređeni par $(p,q) \in W \times H$, $p \in [0, W-1], q \in [0, H-1]$. Središtu piksela pridružujemo kompleksni broj $c = a + ib$, gdje je
 
+
 $$
-a = a_{min} + \frac{p + \frac{1}{2}}{W}(a_{max} - a_{min})
-$$$$
-b = b_{max} - \frac{q + \frac{1}{2}}{H}(b_{max} - b_{min})
+\begin{aligned}
+a &= a_{\min} + \frac{p + \frac{1}{2}}{W}\,(a_{\max} - a_{\min}) \\
+b &= b_{\max} - \frac{q + \frac{1}{2}}{H}\,(b_{\max} - b_{\min})
+\end{aligned}
 $$
+
 
 Ovime smo uspjeli konkretizirati dio kompleksne ravnine u nešto s čime računalo može raditi. Tako da smo spremni za samu implementaciju algoritma.
 
@@ -59,3 +62,22 @@ Ovime smo uspjeli konkretizirati dio kompleksne ravnine u nešto s čime računa
 ```python title="src/mandelbrot/escape_time.py"
 --8<-- "src/mandelbrot/escape_time.py"
 ```
+
+<figure markdown="span">
+  ![Mandelbrotov skup iscrtan escape time algoritmom](../assets/2400x1800.png)
+  <figcaption>Rezolucija 2400 × 1800</figcaption>
+</figure>
+
+<div class="grid" markdown>
+
+<figure markdown="span">
+  ![Detalj ruba Mandelbrotova skupa u rezoluciji 2400 × 1800](../assets/2400x1800_detalj.png)
+  <figcaption>Detalj, rezolucija 2400 × 1800</figcaption>
+</figure>
+
+<figure markdown="span">
+  ![Isti detalj ruba Mandelbrotova skupa u rezoluciji 4800 × 3600](../assets/4800x3600_detalj.png)
+  <figcaption>Detalj, rezolucija 4800 × 3600</figcaption>
+</figure>
+
+</div>
