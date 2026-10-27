@@ -15,7 +15,7 @@ nav:
   - Matematička podloga: podloga.md
   - Algoritmi:
       - Escape time algoritam: algoritmi/escape-time.md
-      - Algoritam-2: algoritmi/algoritam-2.md
+      - Mariani-Silver algoritam: algoritmi/mariani-silver.md
   - Usporedba i ograničenja: usporedba.md
   - Zadatak za slušatelje: zadatak.md
   - Literatura: literatura.md
