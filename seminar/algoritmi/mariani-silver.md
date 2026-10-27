@@ -1,4 +1,4 @@
-# Mariani Silver
+# Mariani-Silver algoritam
 
 Drugi algoritam koji ćemo obraditi je *Mariani-Silver algoritam*, on ubrzava crtanje tako da segmentira sliku u pravokutne dijelove i tako pokušava preskočiti izračun njihove unutrašnjosti. Za izračun i dalje koristimo *Escape time* no broj točaka za koji ga koristimo je znatno manji.
 
