@@ -1,4 +1,3 @@
-# Mandelbrotov skup
+# Uvod
 
-!!! note "U izradi"
-    Sadržaj ovog dijela još nije napisan.
+Za pretpostaviti da je osoba koja čita ovaj seminar (Vi) ima određenu razinu matematičkog obrazovanja (ili interesa), posljedično iz toga slijedi da se ista ta osoba zasigurno susrela s Mandelbrotovim skupom. Ne nužno kroz formalne definicije, kolegije ili slično; prvi susret s tim skupom zasigurno je doživjela vizualno. Većina nas kada je prvi put vidjela Mandelbrotov skup vjerovala je da nije dovoljno matematički zrela da razumije kako on nastaje, što mu daje takav oblik i slično, iako je njegova definicija toliko jednostavna da se može objasniti učenicima u srednjoj školi. Nakon par pogledanih slika i videa osoba se može zapitati kako zapravo možemo vizualizirati Mandelbrotov skup tojest kako kvalitetno (i brzo) prikazati njegovu fraktalnu strukturu na računalu. To i će biti tema ovog seminara - Vizualizacija Mandelbrotovog skupa. No naravno prije algoritama za vizualizaciju moramo formalno definirati skup i proći kroz osnovnu matematiku.

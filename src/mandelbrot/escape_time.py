@@ -52,7 +52,3 @@ def escape_time_plot(W, H, a_min, a_max, b_min, b_max, MAX_ITER):
     plt.show()
 
     return slika
-
-
-
-escape_time_plot(1600, 1200, -2.5, 1, -1.3, 1.3, 125)
