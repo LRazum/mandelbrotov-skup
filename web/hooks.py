@@ -2,7 +2,7 @@
 
 Slike i drugi materijali ostaju na jednom mjestu u repozitoriju, a na stranici
 su dostupni pod putanjom assets/, primjerice ![Opis](assets/slika.png) iz
-seminar/index.md ili ![Opis](../assets/slika.png) iz seminar/postupci/.
+seminar/index.md ili ![Opis](../assets/slika.png) iz seminar/algoritmi/.
 """
 
 from pathlib import Path

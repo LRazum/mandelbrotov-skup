@@ -14,9 +14,9 @@ nav:
   - Uvod: index.md
   - Matematička podloga: podloga.md
   - Matematički rezultat: rezultat.md
-  - Postupci:
-      - Vrijeme bijega: postupci/vrijeme-bijega.md
-      - Drugi postupak: postupci/drugi-postupak.md
+  - Algoritmi:
+      - Escape time algoritam: algoritmi/escape-time.md
+      - Algoritam-2: algoritmi/algoritam-2.md
   - Usporedba i ograničenja: usporedba.md
   - Zadatak za slušatelje: zadatak.md
   - Literatura: literatura.md

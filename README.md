@@ -53,9 +53,9 @@ Ovisnosti su u `requirements.txt`.
 
 Tekst stranica piše se u Markdownu u mapi `seminar/`; formule se pišu kao u
 LaTeX-u, `$…$` u retku i `$$…$$` izlučeno. Slike se spremaju u `assets/` i na
-stranici navode kao `assets/slika.png` (iz `seminar/postupci/` kao
+stranici navode kao `assets/slika.png` (iz `seminar/algoritmi/` kao
 `../assets/slika.png`). Isječak autorova koda uključuje se retkom
-`--8<-- "src/…"` unutar bloka koda, kao u `seminar/postupci/vrijeme-bijega.md`.
+`--8<-- "src/…"` unutar bloka koda, kao u `seminar/algoritmi/escape-time.md`.
 Redoslijed i naslovi stranica u izborniku određuju se u `web/mkdocs.yml`.
 
 Lokalni pregled s osvježavanjem pri svakoj izmjeni, na adresi
