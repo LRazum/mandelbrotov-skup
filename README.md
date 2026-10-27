@@ -29,8 +29,9 @@ autor i doprinositelj jest vlasnik repozitorija.
 ## Trenutačno stanje
 
 Postavljena je organizacija rada. Tekst, matematički rezultat, algoritmi,
-slajdovi i web-stranica još nisu izrađeni. Jezik implementacije jest Python;
-format slajdova i alat za izradu weba još nisu odabrani.
+slajdovi i sadržaj web-stranice još nisu izrađeni. Jezik implementacije jest
+Python, a web se izrađuje alatom MkDocs s temom Material; format slajdova još
+nije odabran. Postavljen je tehnički kostur weba s praznim stranicama.
 
 AI smije pomagati u dopuštenim pripremnim i tehničkim poslovima. Prema pravilima
 kolegija autor sam piše tekst, matematiku i algoritamski kôd rada. Pojedinosti
@@ -47,3 +48,25 @@ python3 -m venv .venv
 ```
 
 Ovisnosti su u `requirements.txt`.
+
+## Web-stranica
+
+Tekst stranica piše se u Markdownu u mapi `seminar/`; formule se pišu kao u
+LaTeX-u, `$…$` u retku i `$$…$$` izlučeno. Slike se spremaju u `assets/` i na
+stranici navode kao `assets/slika.png` (iz `seminar/postupci/` kao
+`../assets/slika.png`). Isječak autorova koda uključuje se retkom
+`--8<-- "src/…"` unutar bloka koda, kao u `seminar/postupci/vrijeme-bijega.md`.
+Redoslijed i naslovi stranica u izborniku određuju se u `web/mkdocs.yml`.
+
+Lokalni pregled s osvježavanjem pri svakoj izmjeni, na adresi
+<http://127.0.0.1:8000/mandelbrotov-skup/>:
+
+```bash
+.venv/bin/pip install -r web/requirements.txt
+.venv/bin/mkdocs serve -f web/mkdocs.yml
+```
+
+Svaki push na granu `main` pokreće `.github/workflows/web.yml`, koji gradi
+stranicu i objavljuje je na <https://lrazum.github.io/mandelbrotov-skup/>.
+Gradnja s `--strict` ne uspijeva ako postoji neispravna poveznica ili
+nedostaje uključena datoteka koda.

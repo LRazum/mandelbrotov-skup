@@ -1,0 +1,18 @@
+/* Dopune izgleda teme Material. */
+
+/* Duge izlučene formule pomiču se vodoravno umjesto da prelaze rub. */
+.md-typeset .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.25em 0;
+}
+
+/* Slike rezultata ne prelaze širinu stupca teksta. */
+.md-typeset img {
+  max-width: 100%;
+  height: auto;
+}
+
+.md-footer-meta .ai-poveznica {
+  margin-left: 0.5em;
+}

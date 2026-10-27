@@ -22,7 +22,8 @@ Autor treba moći objasniti svaki korak bez oslanjanja na AI-generirani kôd.
 | Konačne dvije metode i moguća treća | Odabrati nakon čitanja literature; postupno povećanje težine i mogućnost samostalne reprodukcije. |
 | Matematički rezultat | Odabrati rezultat povezan s vizualizacijom, primjerice temu kriterija bijega; autor sam piše iskaz i skicu dokaza. |
 | Jezik implementacije | Odlučeno 25. 10. 2026.: Python 3.12 i `matplotlib` za prikaz. Autor je 27. 10. 2026. odustao od zasebnih testova; kriterij kolegija o odvojenim testovima ili primjerima ispunjava se primjerima u `examples/`. Prvu inačicu pisati bez vektorizacije kako bi svaki korak postupka bio vidljiv. |
-| Izrada weba i format slajdova | Otvoreno; odabrati jednostavan alat s dobrim prikazom matematike i koda. |
+| Izrada weba | Odlučeno 27. 10. 2026.: MkDocs s temom Material i KaTeX za formule; autor piše Markdown u `seminar/`, a stranica se automatski objavljuje na GitHub Pages iz grane `main`. Razlog: Markdown s LaTeX-ovim formulama, uključivanje autorova koda iz `src/` i alat u Pythonu. MkDocs je zaključan na 1.6.1 jer tema Material nije usklađena s MkDocsom 2.0. |
+| Format slajdova | Otvoreno; odabrati jednostavan alat s dobrim prikazom matematike i koda. |
 | Bibliografski stil | Otvoreno; jedan dosljedan stil za web, slajdove i tuđe materijale. |
 | Trajanje i rok izlaganja | Odlučeno 25. 10. 2026. prema autorovoj informaciji: predaja rada u četvrtak 12. 11. 2026., izlaganje u petak 13. 11. 2026. u trajanju od 45 minuta, uključujući zadatke i pitanja studentima. |
 

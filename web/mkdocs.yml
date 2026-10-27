@@ -1,0 +1,87 @@
+# Tehnička postava web-stranice seminara. Sadržaj stranica nalazi se u
+# ../seminar/, a autorov kôd uključuje se izravno iz ../src/.
+
+site_name: Mandelbrotov skup
+site_url: https://lrazum.github.io/mandelbrotov-skup/
+repo_url: https://github.com/LRazum/mandelbrotov-skup
+repo_name: LRazum/mandelbrotov-skup
+edit_uri: edit/main/seminar/
+
+docs_dir: ../seminar
+site_dir: ../build/web
+
+nav:
+  - Uvod: index.md
+  - Matematička podloga: podloga.md
+  - Matematički rezultat: rezultat.md
+  - Postupci:
+      - Vrijeme bijega: postupci/vrijeme-bijega.md
+      - Drugi postupak: postupci/drugi-postupak.md
+  - Usporedba i ograničenja: usporedba.md
+  - Zadatak za slušatelje: zadatak.md
+  - Literatura: literatura.md
+  - Uporaba umjetne inteligencije: uporaba-ai.md
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: hr
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Tamni prikaz
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Svijetli prikaz
+  features:
+    - navigation.footer
+    - navigation.sections
+    - navigation.top
+    - toc.follow
+    - content.code.copy
+
+plugins:
+  - search
+
+hooks:
+  - hooks.py
+
+watch:
+  - ../src
+  - ../assets
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.snippets:
+      base_path: !relative $config_dir/..
+      check_paths: true
+
+extra_javascript:
+  - javascripts/katex.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js
+
+extra_css:
+  - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css
+  - stylesheets/stranica.css
