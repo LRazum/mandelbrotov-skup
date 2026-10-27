@@ -8,6 +8,7 @@ Ono što opravdava ovaj algoritam je činjenica da je Mandelbrotov skup povezan 
 
   
 Ugrubo, postupak je sljedeći:
+
 1. **Rezultati na rubu.** Ispitujemo rubove pravokutnika.
 2. **Provjera jednakosti.**
     - Ako su rezultati jednaki, popunimo pravokutnik zajedničkom vrijednošću i završavamo njegovu obradu.
@@ -17,6 +18,7 @@ Ugrubo, postupak je sljedeći:
 Mogli bi se pitati  "Što točno ovdje znači izraz *jednaki rezultati*?" ako ste pažljivo čitali prošlo poglavlje o *Escape time* algoritmu uočili ste da sama funkcija `escape_time` uz klasifikaciju vraća i broj iteracije u kojoj je točka klasificirana. Stoga jednakost određujemo uspomoć tih brojeva, tojest pikseli imaju jednak rezultat ako: su svi rubni pikseli pobjegli u istoj iteraciji ili ni za jedan rubni piksel nije otkriven bijeg u zadanom broju iteracija. 
 
 Također je važno uočiti sljedeće, kada dijelimo pravokutnik na četiri manja pravokutnika svi novi pravokutnici dijele dva ruba sa starim pravokutnikom, tojest umjesto ponovnog računanja rezultata za rubove novih pravokutnika možemo iskoristiti rezultate prošlog pravokutnika. To nas motivira da uvedemo *matricu rezultata* u kojoj ćemo čuvati informaciju za svaki piksel na slici; matrica opisuje rezultat na sljedeća tri načina: 
+
 1. *Neizračunat*: za njega još nema rezultata,
 2. *Bijeg u iteraciji n*: bijeg je otkriven u iteraciji n,
 3. *Neotkriven bijeg*: dosegnut je `MAX_ITER` te bijeg nije otkriven.
