@@ -21,7 +21,7 @@ autor i doprinositelj jest vlasnik repozitorija.
 | `docs/` | Pravila, plan, evidencija izvora i uporabe AI-ja; nije tekst za predaju. |
 | `seminar/` | Autorov tekst i matematika za web-stranicu rada. |
 | `prezentacija/` | Autorovi izvori slajdova i materijali za izlaganje. |
-| `src/` | Autorove implementacije algoritama. |
+| `src/` | Implementacije algoritama; autorstvo po datotekama navedeno je u [evidenciji AI-ja](docs/AI_UPORABA.md#autorstvo-koda). |
 | `examples/` | Primjeri pokretanja i parametri demonstracija. |
 | `web/` | Tehnička izvedba web-stranice, odvojena od sadržaja i algoritama. |
 | `assets/` | Slike i drugi materijali s evidentiranim podrijetlom. |
