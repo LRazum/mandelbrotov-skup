@@ -119,7 +119,7 @@ ili drugi dokaz i datum provjere.
 
 | Zahtjev | Dokaz ispunjenja | Stanje |
 | --- | --- | --- |
-| Barem 50 linija koda | Popis autorovih izvornih datoteka i zabilježen način brojanja; organizacijska dokumentacija nije kôd seminara. | Nije potvrđeno. |
+| Barem 50 linija koda | Popis autorovih izvornih datoteka i zabilježen način brojanja; organizacijska dokumentacija nije kôd seminara. | Nije potvrđeno. Autorovi `escape_time.py` i `escape_time_plot.py` (s izmjenama koje još nisu u commitu) imaju 2026-10-31 ukupno 73 retka, od toga 47 nepraznih. Upute ne propisuju način brojanja. |
 | Barem 10 slajdova | Datoteka prezentacije i provjeren broj slajdova. | Nije potvrđeno. |
 | Matematički rezultat sa skicom ili idejom dokaza | Mjesto u autorovu tekstu i slajdovima te provjeren izvor. | Nije potvrđeno. |
 | Zadatak za slušatelje | Mjesto zadatka i veza s izlaganjem. | Nije potvrđeno. |
