@@ -99,16 +99,16 @@ dvije dovršene i provjerene do 5. 11.
 ## Koraci i kriteriji gotovosti
 
 - [x] **Postava repozitorija:** pravila, kazalo, protokol, plan i radne evidencije postoje.
-- [ ] **Literatura:** autor je pročitao relevantne dijelove najmanje dvaju primarnih
+- [x] **Literatura:** autor je pročitao relevantne dijelove najmanje dvaju primarnih
   izvora i zabilježio mjesta na koja će se pozivati.
-- [ ] **Odabir opsega:** zabilježene su dvije metode, odluka o trećoj, matematički
+- [x] **Odabir opsega:** zabilježene su dvije metode, odluka o trećoj, matematički
   rezultat i potrebna predznanja; odabrani su jezik i alati.
-- [ ] **Matematika:** autor je napisao podlogu, rezultat i skicu dokaza te ih provjerio u izvorima.
-- [ ] **Prva metoda:** autorova implementacija, odvojene provjere i primjeri; autor može objasniti svaki korak.
-- [ ] **Druga metoda:** isti kriteriji i usporediva demonstracija razlike prema prvoj.
+- [x] **Matematika:** autor je napisao podlogu, rezultat i skicu dokaza te ih provjerio u izvorima.
+- [x] **Prva metoda:** autorova implementacija, odvojene provjere i primjeri; autor može objasniti svaki korak.
+- [x] **Druga metoda:** isti kriteriji i usporediva demonstracija razlike prema prvoj.
 - [ ] **Moguća treća metoda:** prihvaćena i dovršena ili izričito izostavljena iz opsega.
 - [ ] **Usporedba:** ponovljivi prikazi i mjerenja s navedenim parametrima i ograničenjima.
-- [ ] **Web-rad:** autorov tekst ugrađen u tehničku stranicu; provjereni struktura,
+- [x] **Web-rad:** autorov tekst ugrađen u tehničku stranicu; provjereni struktura,
   prikaz formula, čitljivost, reference, podrijetlo slika i odjeljak o AI-ju na svakoj stranici.
 - [ ] **Prezentacija:** autor je izradio barem deset čitljivih slajdova i provjerio stvarni prikaz.
 - [ ] **Zadatak:** autorov zadatak provjerava nešto objašnjeno tijekom prezentacije.
