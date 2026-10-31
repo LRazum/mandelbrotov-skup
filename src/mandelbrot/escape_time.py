@@ -5,13 +5,20 @@ def escape_time(a, b, MAX_ITER):
 
     for n in range(0, MAX_ITER):
 
-        x_novi = x*x - y*y + a
-        y_novi = 2*x*y + b
+        x_kvadrat = x * x
+        y_kvadrat = y * y
+
+        x_novi = x_kvadrat - y_kvadrat + a
+        y_novi = 2 * x * y + b
 
         x = x_novi
         y = y_novi
 
-        if x*x + y*y > 4:
+        modul_kvadrat = x * x + y * y
+
+        if modul_kvadrat > 4:
             return (1, n)
 
     return (0, MAX_ITER)
+
+# 14 linija koda

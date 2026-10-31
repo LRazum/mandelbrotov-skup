@@ -19,7 +19,7 @@ Autor treba moći objasniti svaki korak bez oslanjanja na AI-generirani kôd.
 
 | Odluka | Stanje i kriterij |
 | --- | --- |
-| Konačne dvije metode i moguća treća | Odabrati nakon čitanja literature; postupno povećanje težine i mogućnost samostalne reprodukcije. |
+| Konačne dvije metode i moguća treća | Odlučeno 31. 10. 2026.: escape time i Mariani–Silver, a Buddhabrot je autorov izbor za treću metodu ako su prve dvije dovršene i provjerene do 5. 11. Kriteriji su postupno povećanje težine i mogućnost samostalne reprodukcije. |
 | Implementacija druge metode | Odlučeno 31. 10. 2026.: Mariani–Silver je samo opisan, a AI-generirani kôd uklonjen je iz rada. Za tu metodu zato otpadaju implementacija, primjeri i mjerenja iz kriterija metode i koraka „Druga metoda”. |
 | Matematički rezultat | Odabrati rezultat povezan s vizualizacijom, primjerice temu kriterija bijega; autor sam piše iskaz i skicu dokaza. |
 | Jezik implementacije | Odlučeno 25. 10. 2026.: Python 3.12 i `matplotlib` za prikaz. Autor je 27. 10. 2026. odustao od zasebnih testova; kriterij kolegija o odvojenim testovima ili primjerima ispunjava se primjerima u `examples/`. Prvu inačicu pisati bez vektorizacije kako bi svaki korak postupka bio vidljiv. |
@@ -36,7 +36,8 @@ Ovo je početni prijedlog za istraživanje, a ne konačan odabir ili objašnjenj
 | --- | --- | --- |
 | 1 | Postupak vremena bijega (*escape-time*) | Osnovna iteracija i kompleksni brojevi; početna usporedna implementacija. Izvor K1. |
 | 2 | Mariani–Silver, adaptivna podjela pravokutnika | Rekurzija i uzorkovanje; kandidat za smanjenje broja izračuna. Konačno uzorkovanje može propustiti detalje pa ga treba usporediti s prvom metodom, bez jamstva identičnog rezultata. Izvor K2. |
-| 3, opcionalno | Procjena vanjske udaljenosti | Derivacije i numerička aproksimacija; prihvatiti samo ako autor razumije potrebnu matematiku. Numerička procjena nije automatski stroga granica udaljenosti. Izvori K3 i K4. |
+| 3, opcionalno | Buddhabrot | Odabrana treća metoda. Slučajno uzorkovanje i histogram orbita točaka koje pobjegnu; prikazuje gustoću orbita, a ne pripadnost skupu. Rezultat je šumovit i ovisi o broju uzoraka, pa uz sliku treba zabilježiti sjeme generatora, broj uzoraka i `MAX_ITER`. Autor piše implementaciju sam. Izvor K9. |
+| Rezerva | Procjena vanjske udaljenosti | Derivacije i numerička aproksimacija; prihvatiti samo ako autor razumije potrebnu matematiku. Numerička procjena nije automatski stroga granica udaljenosti. Izvori K3 i K4. |
 
 Oznake izvora i izravne poveznice nalaze se u [evidenciji izvora](../IZVORI.md).
 Optimizacije i promjene bojanja mogu biti dio usporedbe, uz jasno označavanje
@@ -120,7 +121,7 @@ ili drugi dokaz i datum provjere.
 
 | Zahtjev | Dokaz ispunjenja | Stanje |
 | --- | --- | --- |
-| Barem 50 linija koda | Popis autorovih izvornih datoteka i zabilježen način brojanja; organizacijska dokumentacija nije kôd seminara. | Nije potvrđeno. Autorovi `escape_time.py`, `escape_time_plot.py` (s izmjenama koje još nisu u commitu) i `examples/escape_time_plot.py` imaju 2026-10-31 ukupno 81 redak, od toga 52 neprazna; bez primjera 76 redaka, od toga 49 nepraznih. Upute ne propisuju način brojanja. |
+| Barem 50 linija koda | Popis autorovih izvornih datoteka i zabilježen način brojanja; organizacijska dokumentacija nije kôd seminara. | Nije potvrđeno. Autorovi `escape_time.py`, `escape_time_plot.py` i `examples/escape_time_plot.py` imaju 2026-10-31 ukupno 81 redak, od toga 52 neprazna; bez primjera 76 redaka, od toga 49 nepraznih. Upute ne propisuju način brojanja. |
 | Barem 10 slajdova | Datoteka prezentacije i provjeren broj slajdova. | Nije potvrđeno. |
 | Matematički rezultat sa skicom ili idejom dokaza | Mjesto u autorovu tekstu i slajdovima te provjeren izvor. | Nije potvrđeno. |
 | Zadatak za slušatelje | Mjesto zadatka i veza s izlaganjem. | Nije potvrđeno. |

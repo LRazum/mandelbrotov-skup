@@ -4,7 +4,7 @@ Drugi algoritam koji ćemo obraditi je *Mariani-Silver algoritam*, on ubrzava cr
 
 Glavna ideja kod Mariani Silvera je ta da ako rubovi nekog pravokutnika imaju isti rezultat (pripadnost ili ne pripadnost skupu) tada isto vrijedi i za sve točke u interioru pravokutnika. Ako rub nije jednolik pravokutnik se dijeli na manje dijelove. Zatim se postupak rekurzivno ponavlja na svakom manjem (novom) dijelu.
 
-Ono što opravdava ovaj algoritam je činjenica da je Mandelbrotov skup povezan i jednostavno povezan, to jest da mu je komplement u $\mathbb{C}$ povezan skup. Zato ako je kontura sadržana u skupu onda je u skupu i njen interior. Ovu tvrdnju nećemo dokazivati jer izlazi iz opsega seminara. Naravno, to samo znači da je algoritam matematički točan no u praksi on je i dalje heuristika. Razlog tomu je to što sam rub ima beskonačno mnogo točaka, dok ga računalo prikazuje s ograničenim brojem piksela stoga ne možemo biti sigurni da sve točke (pikseli) na rubu imaju jednak rezultat.
+Ono što opravdava ovaj algoritam je činjenica da je Mandelbrotov skup povezan i jednostavno povezan, to jest da mu je komplement u $\mathbb{C}$ povezan skup. Zato ako je kontura sadržana u skupu onda je u skupu i njen interior. Ovu tvrdnju nećemo dokazivati jer izlazi iz opsega seminara. Naravno, to samo znači da je algoritam matematički točan no u praksi on je i dalje heuristika. Razlog tomu je to što sam rub ima beskonačno mnogo točaka, dok ga računalo prikazuje s ograničenim brojem piksela stoga ne možemo biti sigurni da sve točke na rubu imaju jednak rezultat.
 
   
 Ugrubo, postupak je sljedeći:
@@ -23,4 +23,4 @@ Također je važno uočiti sljedeće, kada dijelimo pravokutnik na četiri manja
 2. *Bijeg u iteraciji n*: bijeg je otkriven u iteraciji n,
 3. *Neotkriven bijeg*: dosegnut je `MAX_ITER` te bijeg nije otkriven.
 
-Uz sve ovo koristimo sljedeću sigurnosnu provjeru, za pravokutnik koji trenutno obrađujemo provjeravamo sadrži li 0. Ako sadrži dijelimo ga na manje bez obzira na jednakost rezultata, ako ne sadrži nastavljamo normalno izvođenje algoritma. Jasno je zašto koristimo ovu zaštitu, zamislimo da pravokutnik omeđuje cijeli skup, sve točke na rubu pravokutnika ne pripadaju skupu pa bi automatski rekli isto za sav interior pravokutnika.
+Uz sve ovo koristimo sljedeću sigurnosnu provjeru, za pravokutnik koji trenutno obrađujemo provjeravamo sadrži li 0. Ako sadrži dijelimo ga na manje bez obzira na jednakost rezultata, ako ne sadrži nastavljamo normalno izvođenje algoritma. Jasno je zašto koristimo ovu zaštitu, zamislimo da pravokutnik omeđuje cijeli skup, sve točke na rubu pravokutnika ne pripadaju skupu pa bi automatski rekli isto za sav interior pravokutnika. 

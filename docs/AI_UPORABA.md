@@ -28,6 +28,7 @@ i ne prikazuj generirani sadržaj kao autorov samostalni rad.
 | 2026-10-31 | Claude Code (Claude Opus 5.5) | Upis autorove izjave o autorstvu koda: `escape_time.py` i `escape_time_plot.py` napisao je autor, a Mariani-Silver kôd generiran je AI-jem. Usklađeni opis mape `src/` i stavka o 50 linija koda; kôd nije mijenjan. | `docs/AI_UPORABA.md`, `README.md`, `docs/plan/SEMINAR.md`. | Izjava potječe od autora. U zapisima sesija Claude Codea za ovaj repozitorij nije pronađeno pisanje `mariani_silver.py`; model Claude Opus 5.5 naveo je autor. `seminar/uporaba-ai.md` nije mijenjan. |
 | 2026-10-31 | Claude Code (Claude Opus 5.5) | Autor je zatražio kôd za Buddhabrot; zahtjev je odbijen prema pravilima kolegija jer je riječ o algoritmu rada. Dana su samo pitanja za provjeru razumijevanja i upućivanje na izvor K9; Buddhabrot kôd ni pseudokôd nisu napisani. | `docs/AI_UPORABA.md`. | Čitanjem provjereno da `src/` nema Buddhabrot kôda. Implementacija ostaje autoru. |
 | 2026-10-31 | Claude Code (Claude Opus 5.5) | Na autorov zahtjev uklonjeni su AI-generirani modul `mariani_silver.py` i primjer `mariani_silver_plot.py`. Sa stranice algoritma uklonjeni su odjeljak s kodom i rečenica koja ga najavljuje; ostali autorov opis nije mijenjan. Ponovno je odbijeno pisanje Buddhabrot koda za lokalno dobivanje rezultata. | `src/mandelbrot/mariani_silver.py`, `examples/mariani_silver_plot.py`, `seminar/algoritmi/mariani-silver.md`, `docs/plan/SEMINAR.md`, `docs/AI_UPORABA.md`. | Gradnja `--strict` provjerena je na sadržaju commita. Kôd ostaje u Git povijesti jer se povijest ne prepisuje. |
+| 2026-10-31 | Claude Code (Claude Opus 5.5) | Na autorov zahtjev commitane su autorove izmjene u `escape_time_plot.py`, bez promjene sadržaja. | `src/mandelbrot/escape_time_plot.py` (samo commit), `docs/AI_UPORABA.md`, `docs/plan/SEMINAR.md`. | Slika 60 × 45 izračunata je bez pogreške, a gradnja `--strict` prolazi na sadržaju commita. |
 
 ## Autorstvo koda
 
@@ -39,7 +40,7 @@ Stanje prema autorovoj izjavi od 31. listopada 2026.
 | `src/mandelbrot/escape_time_plot.py` | Autor | Claude Code je funkciju premjestio u ovaj modul i dodao uvoz `escape_time` (2026-10-27). |
 | `examples/escape_time_plot.py` | Autor | Primjer pokretanja. |
 | `src/mandelbrot/mariani_silver.py` | Generirano AI-jem | Model Claude Opus 5.5 i datum generiranja 2026-10-27 prema autorovoj izjavi. U repozitorij je dodan istoga dana commitom `592060e`. Tekst stranice `seminar/algoritmi/mariani-silver.md` napisao je autor. |
-| `examples/mariani_silver_plot.py` | Generirano AI-jem | Primjer pokretanja; model Claude Opus 5.5 prema autorovoj izjavi. |
+| `examples/mariani_silver_plot.py` | Autor | Primjer pokretanja. Ispravak 2026-10-31: autor je izjavio da je primjer izradio sam, čime je zamijenjena njegova ranija izjava od istoga dana. |
 
 Datoteke `src/mandelbrot/mariani_silver.py` i `examples/mariani_silver_plot.py` uklonjene su 31. listopada 2026. na autorov zahtjev, a metoda je na webu samo opisana. Zapisi o njima ostaju radi provjerljivosti.
 

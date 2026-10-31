@@ -28,6 +28,18 @@ i zabilježiti vlastitu provjeru. Ovo nije konačna bibliografija.
 | K3 | Linas Vepstas, [M-Set Derivatives](https://linas.org/art-gallery/mderive/mderive.html), 1997./2000. | Autorski prikazi derivacija i dio o procjeni udaljenosti; istražiti kao mogući napredniji pristup. |
 | K4 | Claude Heiland-Allen, [Distance Estimation for Hybrid Escape Time Fractals](https://www.mathr.co.uk/de/), 2020. | Autorski tehnički rad; dio o Mandelbrotovu skupu i ograničenja u odjeljku 5.3. Naprednije dopunsko čitanje. |
 
+Sljedeće je zapise AI alat pronašao 31. listopada 2026. za moguću treću metodu,
+perturbaciju s referentnom orbitom. Status svih zapisa jest **kandidat**. Nijedan
+nije recenzirani članak, pa autor mora procijeniti može li ih navesti kao primarne.
+
+| Oznaka | Izvor | Moguća namjena | Što je AI provjerio |
+| --- | --- | --- | --- |
+| K5 | K. I. Martin, *SuperFractalThing Maths*, 2013., [PDF](http://www.science.eclipse.co.uk/sft_maths.pdf). | Izvorni opis perturbacije u praksi. | Dokument se nije mogao otvoriti; navod je preuzet iz bibliografije dokumentacije [Fractalshades](https://gbillotey.github.io/Fractalshades-doc/math.html) i sa stranice [Perturbation](https://mathr.co.uk/web/m-perturbation.html) C. Heiland-Allena. Potrebno je pronaći dostupnu kopiju. |
+| K6 | Claude Heiland-Allen, *Perturbation techniques applied to the Mandelbrot set*, 21. 10. 2013., [PDF](https://mathr.co.uk/mandelbrot/perturbation.pdf). | Ideja postupka i rekurzije za razliku orbita. | Naslov, autor, datum i prve stranice pročitani su u PDF-u. Ostatak dokumenta nije provjeren. |
+| K7 | Zhuoran, *Another solution to perturbation glitches*, 2021., [objava na forumu](https://fractalforums.org/fractal-mathematics-and-new-theories/28/another-solution-to-perturbation-glitches/4360). | Rebasing kao rješenje problema gličeva. | Objava se nije mogla otvoriti; uvjet je zasad poznat samo iz sekundarnog opisa u dokumentaciji Fractalshades. |
+| K8 | Sergey Khashin, [*Fast Mandelbrot set with infinite resolution*](https://math.ivanovo.ac.ru/dalgebra/Khashin/man/man.html). | Mogući neovisan opis iste ideje. | Stranica je samo pronađena pretraživanjem, s datumom 9. 7. 2011., a stranica [Perturbation](https://mathr.co.uk/web/m-perturbation.html) navodi 2016. Godinu i sadržaj treba provjeriti. |
+| K9 | Melinda Green, [The Buddhabrot Technique](https://superliminal.com/fractals/bbrot/). | Izravan opis metode njezine autorice: uzorkovanje, odbacivanje neodbjeglih točaka, histogram orbita i boje iz triju pragova iteracija. | Stranicu je AI otvorio 31. 10. 2026. preko alata za sažimanje; godina 1993. navedena je na stranici, a izvorna objava na Usenetu nije pronađena. Autor treba sam pročitati stranicu. |
+
 ## Kandidati za matematičku podlogu
 
 AI alat pronašao je sljedeće zapise 25. listopada 2026. Bibliografski podaci
