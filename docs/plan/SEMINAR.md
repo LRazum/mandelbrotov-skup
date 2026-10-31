@@ -20,6 +20,7 @@ Autor treba moći objasniti svaki korak bez oslanjanja na AI-generirani kôd.
 | Odluka | Stanje i kriterij |
 | --- | --- |
 | Konačne dvije metode i moguća treća | Odabrati nakon čitanja literature; postupno povećanje težine i mogućnost samostalne reprodukcije. |
+| Implementacija druge metode | Odlučeno 31. 10. 2026.: Mariani–Silver je samo opisan, a AI-generirani kôd uklonjen je iz rada. Za tu metodu zato otpadaju implementacija, primjeri i mjerenja iz kriterija metode i koraka „Druga metoda”. |
 | Matematički rezultat | Odabrati rezultat povezan s vizualizacijom, primjerice temu kriterija bijega; autor sam piše iskaz i skicu dokaza. |
 | Jezik implementacije | Odlučeno 25. 10. 2026.: Python 3.12 i `matplotlib` za prikaz. Autor je 27. 10. 2026. odustao od zasebnih testova; kriterij kolegija o odvojenim testovima ili primjerima ispunjava se primjerima u `examples/`. Prvu inačicu pisati bez vektorizacije kako bi svaki korak postupka bio vidljiv. |
 | Izrada weba | Odlučeno 27. 10. 2026.: MkDocs s temom Material i KaTeX za formule; autor piše Markdown u `seminar/`, a stranica se automatski objavljuje na GitHub Pages iz grane `main`. Razlog: Markdown s LaTeX-ovim formulama, uključivanje autorova koda iz `src/` i alat u Pythonu. MkDocs je zaključan na 1.6.1 jer tema Material nije usklađena s MkDocsom 2.0. |
@@ -119,7 +120,7 @@ ili drugi dokaz i datum provjere.
 
 | Zahtjev | Dokaz ispunjenja | Stanje |
 | --- | --- | --- |
-| Barem 50 linija koda | Popis autorovih izvornih datoteka i zabilježen način brojanja; organizacijska dokumentacija nije kôd seminara. | Nije potvrđeno. Autorovi `escape_time.py` i `escape_time_plot.py` (s izmjenama koje još nisu u commitu) imaju 2026-10-31 ukupno 73 retka, od toga 47 nepraznih. Upute ne propisuju način brojanja. |
+| Barem 50 linija koda | Popis autorovih izvornih datoteka i zabilježen način brojanja; organizacijska dokumentacija nije kôd seminara. | Nije potvrđeno. Autorovi `escape_time.py`, `escape_time_plot.py` (s izmjenama koje još nisu u commitu) i `examples/escape_time_plot.py` imaju 2026-10-31 ukupno 81 redak, od toga 52 neprazna; bez primjera 76 redaka, od toga 49 nepraznih. Upute ne propisuju način brojanja. |
 | Barem 10 slajdova | Datoteka prezentacije i provjeren broj slajdova. | Nije potvrđeno. |
 | Matematički rezultat sa skicom ili idejom dokaza | Mjesto u autorovu tekstu i slajdovima te provjeren izvor. | Nije potvrđeno. |
 | Zadatak za slušatelje | Mjesto zadatka i veza s izlaganjem. | Nije potvrđeno. |

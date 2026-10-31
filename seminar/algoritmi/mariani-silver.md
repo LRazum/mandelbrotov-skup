@@ -23,12 +23,4 @@ Također je važno uočiti sljedeće, kada dijelimo pravokutnik na četiri manja
 2. *Bijeg u iteraciji n*: bijeg je otkriven u iteraciji n,
 3. *Neotkriven bijeg*: dosegnut je `MAX_ITER` te bijeg nije otkriven.
 
-Uz sve ovo koristimo sljedeću sigurnosnu provjeru, za pravokutnik koji trenutno obrađujemo provjeravamo sadrži li 0. Ako sadrži dijelimo ga na manje bez obzira na jednakost rezultata, ako ne sadrži nastavljamo normalno izvođenje algoritma. Jasno je zašto koristimo ovu zaštitu, zamislimo da pravokutnik omeđuje cijeli skup, sve točke na rubu pravokutnika ne pripadaju skupu pa bi automatski rekli isto za sav interior pravokutnika. 
-
-Nakon ovog kratkog opisa spremni smo za samu implementaciju algoritma.
-
-## Implementacija
-
-```python title="src/mandelbrot/mariani_silver.py"
---8<-- "src/mandelbrot/mariani_silver.py"
-```
+Uz sve ovo koristimo sljedeću sigurnosnu provjeru, za pravokutnik koji trenutno obrađujemo provjeravamo sadrži li 0. Ako sadrži dijelimo ga na manje bez obzira na jednakost rezultata, ako ne sadrži nastavljamo normalno izvođenje algoritma. Jasno je zašto koristimo ovu zaštitu, zamislimo da pravokutnik omeđuje cijeli skup, sve točke na rubu pravokutnika ne pripadaju skupu pa bi automatski rekli isto za sav interior pravokutnika.
