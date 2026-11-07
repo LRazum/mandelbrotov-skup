@@ -16,7 +16,7 @@ nav:
   - Algoritmi:
       - Escape time algoritam: algoritmi/escape-time.md
       - Mariani-Silver algoritam: algoritmi/mariani-silver.md
-  - Zadatak za slušatelje: zadatak.md
+      - Buddhabrot: algoritmi/buddhabrot.md
   - Literatura: literatura.md
   - Uporaba umjetne inteligencije: uporaba-ai.md
 
