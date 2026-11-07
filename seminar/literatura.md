@@ -5,3 +5,5 @@
 3. H.-O. Peitgen i D. Saupe (ur.), *The Science of Fractal Images*. Springer-Verlag, New York, 1988. DOI: [10.1007/978-1-4612-3784-6](https://doi.org/10.1007/978-1-4612-3784-6)
 4. R. Mariani, „The Mariani-Silver Algorithm for Drawing the Mandelbrot Set”, *Medium*, 29. kolovoza 2021. <https://ricomariani.medium.com/the-mariani-silver-algorithm-for-drawing-the-mandelbrot-set-a71e31bc20b6>
 5. A. Adinets, „Adaptive Parallel Computation with CUDA Dynamic Parallelism”, *NVIDIA Technical Blog*, 6. svibnja 2014.
+6. M. Green, *The Buddhabrot Technique*, Superliminal, bez navedene godine objave. <https://superliminal.com/fractals/bbrot/>
+7. R. P. Munafo, „Buddhabrot”, *Mu-Ency — The Mandelbrot Set Glossary and Encyclopedia*, 21. lipnja 2023. <https://mrob.com/pub/muency/buddhabrot.html>
