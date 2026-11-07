@@ -1,9 +1,13 @@
 # Vizualizacija Mandelbrotova skupa
 
 Repozitorij za samostalnu izradu seminarskog rada: matematika Mandelbrotova
-skupa i usporedba dvaju do triju postupaka njegove vizualizacije, od osnovnih
-prema naprednijima. Autor treba razumjeti svaki odabrani postupak i moći ga
-samostalno ponovno implementirati i objasniti.
+skupa i usporedba triju postupaka njegove vizualizacije, od osnovnih prema
+naprednijima. Autor treba razumjeti svaki odabrani postupak i moći ga
+samostalno objasniti.
+
+Odabrane teme su escape time, Mariani–Silver i Buddhabrot. Prema odluci autora
+od 7. studenoga 2026. Buddhabrot se obrađuje kroz ideju algoritma i nekoliko
+vizualizacija, bez pisanja koda.
 
 Seminar, web-stranica i izlaganje izrađuju se na hrvatskom jeziku. Jedini ljudski
 autor i doprinositelj jest vlasnik repozitorija.

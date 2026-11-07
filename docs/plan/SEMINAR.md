@@ -1,25 +1,30 @@
 # Plan seminara
 
 Ovo je plan rada, a ne tekst, matematički izvod ili prezentacija za predaju.
-Stanje na dan 25. listopada 2026.: postavljena je organizacija repozitorija i
-poznati su rokovi; sadržaj seminara još nije izrađen.
+Ažuriranje opsega 7. studenoga 2026.: autor je potvrdio Buddhabrot kao treću
+temu, kroz ideju algoritma i nekoliko vizualizacija, bez pisanja koda.
 
 ## Cilj i granice opsega
 
-Autor predstavlja osnovnu matematiku Mandelbrotova skupa i uspoređuje dva do
-tri postupka vizualizacije. Prioritet su dvije dobro shvaćene metode; treća je
-proširenje kada za nju postoje vrijeme i potrebno razumijevanje. Ovo je autorov
-cilj, uz zasebne minimalne zahtjeve kolegija.
+Autor predstavlja osnovnu matematiku Mandelbrotova skupa i tri postupka
+vizualizacije: escape time, Mariani–Silver i Buddhabrot. Buddhabrot je potvrđen
+kao treća tema 7. studenoga 2026. prema autorovoj odluci. Obrađuju se ideja
+algoritma i nekoliko vizualizacija, bez pisanja koda. Ovo je autorov cilj,
+uz zasebne minimalne zahtjeve kolegija.
 
-Svaka metoda treba imati obrazložen izbor, provjeren primarni izvor, autorovu
-implementaciju, primjere, ograničenja i usporedbu pod usporedivim uvjetima.
-Autor treba moći objasniti svaki korak bez oslanjanja na AI-generirani kôd.
+Svaka metoda treba imati obrazložen izbor, provjeren primarni izvor i
+objašnjena ograničenja. Escape time ima autorovu implementaciju i primjere;
+Mariani–Silver ostaje opisan, a Buddhabrot se predstavlja kroz ideju algoritma
+i nekoliko vizualizacija, bez implementacije, primjera pokretanja i mjerenja
+vlastitog koda. Uz preuzete vizualizacije treba evidentirati autora, izvor i
+dopuštenje uporabe ili licencu. Autor treba moći samostalno objasniti postupke;
+mjerenja implementiranih inačica provode se pod usporedivim uvjetima.
 
 ## Otvorene odluke
 
 | Odluka | Stanje i kriterij |
 | --- | --- |
-| Konačne dvije metode i moguća treća | Odlučeno 31. 10. 2026.: escape time i Mariani–Silver, a Buddhabrot je autorov izbor za treću metodu ako su prve dvije dovršene i provjerene do 5. 11. Kriteriji su postupno povećanje težine i mogućnost samostalne reprodukcije. |
+| Odabrane tri metode | Odlučeno 7. 11. 2026. prema autorovoj poruci: escape time, Mariani–Silver i Buddhabrot. Time je zamijenjen raniji uvjet za uključivanje treće metode do 5. 11. Buddhabrot se obrađuje kroz ideju algoritma i nekoliko vizualizacija, bez pisanja koda; treba mu predvidjeti prostor na webu i u izlaganju. |
 | Implementacija druge metode | Odlučeno 31. 10. 2026.: Mariani–Silver je samo opisan, a AI-generirani kôd uklonjen je iz rada. Za tu metodu zato otpadaju implementacija, primjeri i mjerenja iz kriterija metode i koraka „Druga metoda”. |
 | Matematički rezultat | Odabrati rezultat povezan s vizualizacijom, primjerice temu kriterija bijega; autor sam piše iskaz i skicu dokaza. |
 | Jezik implementacije | Odlučeno 25. 10. 2026.: Python 3.12 i `matplotlib` za prikaz. Autor je 27. 10. 2026. odustao od zasebnih testova; kriterij kolegija o odvojenim testovima ili primjerima ispunjava se primjerima u `examples/`. Prvu inačicu pisati bez vektorizacije kako bi svaki korak postupka bio vidljiv. |
@@ -36,7 +41,7 @@ Ovo je početni prijedlog za istraživanje, a ne konačan odabir ili objašnjenj
 | --- | --- | --- |
 | 1 | Postupak vremena bijega (*escape-time*) | Osnovna iteracija i kompleksni brojevi; početna usporedna implementacija. Izvor K1. |
 | 2 | Mariani–Silver, adaptivna podjela pravokutnika | Rekurzija i uzorkovanje; kandidat za smanjenje broja izračuna. Konačno uzorkovanje može propustiti detalje pa ga treba usporediti s prvom metodom, bez jamstva identičnog rezultata. Izvor K2. |
-| 3, opcionalno | Buddhabrot | Odabrana treća metoda. Slučajno uzorkovanje i histogram orbita točaka koje pobjegnu; prikazuje gustoću orbita, a ne pripadnost skupu. Rezultat je šumovit i ovisi o broju uzoraka, pa uz sliku treba zabilježiti sjeme generatora, broj uzoraka i `MAX_ITER`. Autor piše implementaciju sam. Izvor K9. |
+| 3 | Buddhabrot | Potvrđena treća tema, bez pisanja koda: ideja algoritma i nekoliko vizualizacija. Predznanje: orbite, slučajno uzorkovanje i histogram. Autor treba proučiti izvore K9 i K10, pripremiti vlastito objašnjenje i odabrati vizualizacije s evidentiranim podrijetlom i dopuštenjem uporabe. Parametre preuzetih slika navesti kada su dostupni; ne prikazivati ih kao rezultat vlastitog koda. |
 | Rezerva | Procjena vanjske udaljenosti | Derivacije i numerička aproksimacija; prihvatiti samo ako autor razumije potrebnu matematiku. Numerička procjena nije automatski stroga granica udaljenosti. Izvori K3 i K4. |
 
 Oznake izvora i izravne poveznice nalaze se u [evidenciji izvora](../IZVORI.md).
@@ -57,7 +62,7 @@ Za svaku kandidatsku metodu prije prihvaćanja provjeriti:
 3. Odabrani matematički rezultat i ideja dokaza.
 4. Osnovni postupak vizualizacije.
 5. Drugi postupak i usporedba s prvim.
-6. Treći postupak, samo ako je prihvaćen u opseg.
+6. Buddhabrot: ideja algoritma i nekoliko vizualizacija, bez implementacije.
 7. Usporedni rezultati, ograničenja i osvrt.
 8. Zadatak za slušatelje vezan uz prikazane pojmove ili demonstraciju.
 9. Reference i autorov odjeljak o uporabi AI-ja.
@@ -86,15 +91,16 @@ preskakanjem provjera.
 | 25. – 28. 10. | Literatura i odabir opsega: primarni izvori, matematički rezultat, jezik i alati. |
 | 29. 10. – 1. 11. | Matematička podloga i skica dokaza; prva metoda s provjerama. |
 | 2. – 5. 11. | Druga metoda i usporedba s prvom. Do 5. 11. odluka o trećoj metodi. |
-| 6. – 9. 11. | Tekst web-rada, slajdovi i zadatak za slušatelje. |
+| 6. – 9. 11. | Tekst web-rada, slajdovi i zadatak za slušatelje; prema odluci od 7. 11. uključiti ideju Buddhabrota i nekoliko vizualizacija, bez pisanja koda. |
 | 10. – 11. 11. | Pregled jezika, prikaza formula, referenci i odjeljka o AI-ju; proba izlaganja. |
 | 12. 11. | Predaja rada. |
 | 13. 11. | Izlaganje od 45 minuta. |
 
 Izlaganje od 45 minuta s pitanjima i zadacima vjerojatno traži znatno više od
 minimalnih deset slajdova. Raspodjelu vremena po cjelinama autor određuje nakon
-odabira opsega i provjerava na probi. Treća metoda ulazi u opseg samo ako su prve
-dvije dovršene i provjerene do 5. 11.
+odabira opsega i provjerava na probi. Buddhabrot je uključen prema autorovoj
+odluci od 7. 11.; prostor za njegovu ideju i vizualizacije treba uklopiti u
+postojeće trajanje izlaganja.
 
 ## Koraci i kriteriji gotovosti
 
@@ -106,7 +112,9 @@ dvije dovršene i provjerene do 5. 11.
 - [x] **Matematika:** autor je napisao podlogu, rezultat i skicu dokaza te ih provjerio u izvorima.
 - [x] **Prva metoda:** autorova implementacija, odvojene provjere i primjeri; autor može objasniti svaki korak.
 - [x] **Druga metoda:** isti kriteriji i usporediva demonstracija razlike prema prvoj.
-- [ ] **Moguća treća metoda:** prihvaćena i dovršena ili izričito izostavljena iz opsega.
+- [ ] **Buddhabrot:** autor je pripremio objašnjenje ideje algoritma i nekoliko
+  vizualizacija s provjerenim izvorima i dopuštenjem uporabe; pisanje koda
+  nije dio opsega ove teme.
 - [ ] **Usporedba:** ponovljivi prikazi i mjerenja s navedenim parametrima i ograničenjima.
 - [x] **Web-rad:** autorov tekst ugrađen u tehničku stranicu; provjereni struktura,
   prikaz formula, čitljivost, reference, podrijetlo slika i odjeljak o AI-ju na svakoj stranici.
