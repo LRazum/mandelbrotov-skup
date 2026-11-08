@@ -19,3 +19,5 @@ def escape_time(a, b, MAX_ITER):
         y = y_novi
 
     return (0, MAX_ITER)
+
+# 14 linija koda

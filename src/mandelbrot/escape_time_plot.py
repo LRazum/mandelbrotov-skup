@@ -26,7 +26,7 @@ def boja_tocke(escaped, n, MAX_ITER, paleta):
 
     if escaped == 0:
         return (0, 0, 0)
-    udio = n / MAX_ITER
+    udio = (n / MAX_ITER) ** 0.5
     rgba = paleta(udio)
     rgb = rgba[:3]
     return rgb
@@ -41,7 +41,7 @@ def nacrtaj(slika, a_min, a_max, b_min, b_max):
 
 def escape_time_plot(W, H, a_min, a_max, b_min, b_max, MAX_ITER):
 
-    slika = zeros((H, W, 3))
+    slika = zeros((H, W, 3), dtype="float32")
     paleta = plt.get_cmap("inferno")
 
     for q in range(0, H):
