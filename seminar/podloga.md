@@ -1,6 +1,6 @@
 # Što je Mandelbrotov skup?
 
-Za svaki kompleksni broj $c \in  \mathbb{C}$ promatramo niz $z_0 = 0, z_{n+1} = z_n^2 + c.$ Dobivamo niz $(z_n)_{n \in \mathbb{N}}$. Uočimo da se broj $z_n$ mijenja pri svakoj iteraciji dok $c$ ostaje fiksan. Mandelbrotov skup je skup svih parametra $c$ za koje je niz $(z_n)_{n \in \mathbb{N}}$ ograničen. Formalno, $M$ je Mandelbrotov skup ako:
+Za svaki kompleksni broj $c \in  \mathbb{C}$ promatramo niz $z_0 = 0, z_{n+1} = z_n^2 + c.$ Dobivamo niz $(z_n)_{n \in \mathbb{N}}$. Uočimo da se broj $z_n$ mijenja pri svakoj iteraciji dok $c$ ostaje fiksan. Mandelbrotov skup je skup svih parametara $c$ za koje je niz $(z_n)_{n \in \mathbb{N}}$ ograničen. Formalno, $M$ je Mandelbrotov skup ako:
 
 $$
 {
