@@ -25,6 +25,7 @@ mjerenja implementiranih inačica provode se pod usporedivim uvjetima.
 | Odluka | Stanje i kriterij |
 | --- | --- |
 | Odabrane tri metode | Odlučeno 7. 11. 2026. prema autorovoj poruci: escape time, Mariani–Silver i Buddhabrot. Time je zamijenjen raniji uvjet za uključivanje treće metode do 5. 11. Buddhabrot se obrađuje kroz ideju algoritma i nekoliko vizualizacija, bez pisanja koda; treba mu predvidjeti prostor na webu i u izlaganju. |
+| Mjesto zadatka za slušatelje | Odlučeno 8. 11. 2026. prema autorovoj poruci: zadatak se daje samo na izlaganju, na slajdu, a ne na web-stranici. Stranica `seminar/zadatak.md` zato je uklonjena iz weba. |
 | Implementacija druge metode | Odlučeno 31. 10. 2026.: Mariani–Silver je samo opisan, a AI-generirani kôd uklonjen je iz rada. Za tu metodu zato otpadaju implementacija, primjeri i mjerenja iz kriterija metode i koraka „Druga metoda”. |
 | Matematički rezultat | Odabrati rezultat povezan s vizualizacijom, primjerice temu kriterija bijega; autor sam piše iskaz i skicu dokaza. |
 | Jezik implementacije | Odlučeno 25. 10. 2026.: Python 3.12 i `matplotlib` za prikaz. Autor je 27. 10. 2026. odustao od zasebnih testova; kriterij kolegija o odvojenim testovima ili primjerima ispunjava se primjerima u `examples/`. Prvu inačicu pisati bez vektorizacije kako bi svaki korak postupka bio vidljiv. |
@@ -64,8 +65,10 @@ Za svaku kandidatsku metodu prije prihvaćanja provjeriti:
 5. Drugi postupak i usporedba s prvim.
 6. Buddhabrot: ideja algoritma i nekoliko vizualizacija, bez implementacije.
 7. Usporedni rezultati, ograničenja i osvrt.
-8. Zadatak za slušatelje vezan uz prikazane pojmove ili demonstraciju.
-9. Reference i autorov odjeljak o uporabi AI-ja.
+8. Reference i autorov odjeljak o uporabi AI-ja.
+
+Zadatak za slušatelje nije dio web-rada; prema odluci od 8. 11. daje se samo
+na izlaganju.
 
 Naslove autor može prilagoditi nakon istraživanja. Razina detaljnosti i duljine
 cjelina trebaju biti uravnotežene, a svaka nova metoda oslonjena na prethodno objašnjeno.
@@ -91,7 +94,7 @@ preskakanjem provjera.
 | 25. – 28. 10. | Literatura i odabir opsega: primarni izvori, matematički rezultat, jezik i alati. |
 | 29. 10. – 1. 11. | Matematička podloga i skica dokaza; prva metoda s provjerama. |
 | 2. – 5. 11. | Druga metoda i usporedba s prvom. Do 5. 11. odluka o trećoj metodi. |
-| 6. – 9. 11. | Tekst web-rada, slajdovi i zadatak za slušatelje; prema odluci od 7. 11. uključiti ideju Buddhabrota i nekoliko vizualizacija, bez pisanja koda. |
+| 6. – 9. 11. | Tekst web-rada, slajdovi i zadatak za slušatelje (samo na slajdu); prema odluci od 7. 11. uključiti ideju Buddhabrota i nekoliko vizualizacija, bez pisanja koda. |
 | 10. – 11. 11. | Pregled jezika, prikaza formula, referenci i odjeljka o AI-ju; proba izlaganja. |
 | 12. 11. | Predaja rada. |
 | 13. 11. | Izlaganje od 45 minuta. |
@@ -132,7 +135,7 @@ ili drugi dokaz i datum provjere.
 | Barem 50 linija koda | Popis autorovih izvornih datoteka i zabilježen način brojanja; organizacijska dokumentacija nije kôd seminara. | Nije potvrđeno. Autorovi `escape_time.py`, `escape_time_plot.py` i `examples/escape_time_plot.py` imaju 2026-10-31 ukupno 81 redak, od toga 52 neprazna; bez primjera 76 redaka, od toga 49 nepraznih. Upute ne propisuju način brojanja. |
 | Barem 10 slajdova | Datoteka prezentacije i provjeren broj slajdova. | Nije potvrđeno. |
 | Matematički rezultat sa skicom ili idejom dokaza | Mjesto u autorovu tekstu i slajdovima te provjeren izvor. | Nije potvrđeno. |
-| Zadatak za slušatelje | Mjesto zadatka i veza s izlaganjem. | Nije potvrđeno. |
+| Zadatak za slušatelje | Slajd sa zadatkom u prezentaciji i veza s izlaganjem; prema odluci od 8. 11. zadatak nije na webu. | Nije potvrđeno. |
 | Barem dva primarna izvora | Potpune reference, provjerena mjesta i stvarna uporaba u radu. | Nije potvrđeno. |
 | Odjeljak o AI-ju na svakoj web-stranici | Pregled svih objavljenih stranica i usklađenost s evidencijom. | Nije potvrđeno. |
 | Hrvatski jezik i kvaliteta izvedbe | Pregled teksta, matematike, slajdova, weba i koda prema kriterijima kolegija. | Nije potvrđeno. |

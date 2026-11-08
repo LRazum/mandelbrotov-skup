@@ -67,21 +67,65 @@ Ovime smo uspjeli konkretizirati dio kompleksne ravnine u nešto s čime računa
 --8<-- "src/mandelbrot/escape_time_plot.py"
 ```
 
-<figure markdown="span">
-  ![Mandelbrotov skup iscrtan escape time algoritmom](../assets/2400x1800.png)
-  <figcaption>Rezolucija 2400 × 1800</figcaption>
-</figure>
+## Slike
 
 <div class="grid" markdown>
 
 <figure markdown="span">
-  ![Detalj ruba Mandelbrotova skupa u rezoluciji 2400 × 1800](../assets/2400x1800_detalj.png)
-  <figcaption>Detalj, rezolucija 2400 × 1800</figcaption>
+  ![Cijeli Mandelbrotov skup, srednja kvaliteta](../assets/escape-time/srednja_cijeli_skup.png)
+  <figcaption>1200 × 900</figcaption>
 </figure>
 
 <figure markdown="span">
-  ![Isti detalj ruba Mandelbrotova skupa u rezoluciji 4800 × 3600](../assets/4800x3600_detalj.png)
-  <figcaption>Detalj, rezolucija 4800 × 3600</figcaption>
+  ![Cijeli Mandelbrotov skup, visoka kvaliteta](../assets/escape-time/visoka_cijeli_skup.png)
+  <figcaption>4000 × 3000</figcaption>
+</figure>
+
+<figure markdown="span">
+  ![Detalj ruba Mandelbrotova skupa, srednja kvaliteta](../assets/escape-time/srednja_detalj.png)
+  <figcaption>1200 × 900</figcaption>
+</figure>
+
+<figure markdown="span">
+  ![Isti detalj ruba Mandelbrotova skupa, visoka kvaliteta](../assets/escape-time/visoka_detalj.png)
+  <figcaption>4000 × 3000</figcaption>
 </figure>
 
 </div>
+
+### Postavke
+
+| Slika | Rezolucija | `MAX_ITER` |
+| --- | --- | --- |
+| Srednja — cijeli skup | 1200 × 900 | 150 |
+| Srednja — detalj | 1200 × 900 | 500 |
+| Visoka — cijeli skup | 4000 × 3000 | 2000 |
+| Visoka — isti detalj | 4000 × 3000 | 2000 |
+
+Granice za cijeli skup:
+
+```python
+a_min = -2.4
+a_max = 0.8
+b_min = -1.2
+b_max = 1.2
+```
+
+Granice detalja, jednake za obje kvalitete:
+
+```python
+a_min = -0.743647887037
+a_max = -0.743639887037
+b_min = 0.131822904205
+b_max = 0.131828904205
+```
+
+Središte detalja je približno
+
+$$
+c = -0.743643887037 + 0.131825904205\,i.
+$$
+
+Nalazi se u gornjem Seahorse Valleyju, blizu spoja glavne kardioide i velikog lijevog kruga. Izrez je približno 400 000 puta povećan u odnosu na kadar cijelog skupa.
+
+Za boje je korištena paleta inferno, gama 0.5 i fiksna skala boja: 200 za cijeli skup, odnosno 1500 za detalj. Boje dakle nisu normalizirane izravno s MAX_ITER.

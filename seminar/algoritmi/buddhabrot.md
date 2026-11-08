@@ -14,3 +14,22 @@ Ugrubo, postupak je sljedeći:
     - Ako je bijeg otkriven, povećamo brojače piksela u koje su padali članovi niza prije bijega.
 3. **Ponavljanje.** Postupak ponavljamo za mnogo brojeva $c$.
 4. **Bojanje.** Vrijednosti brojača pretvaramo u svjetlinu ili boju. Veći broj posjeta daje svjetliji piksel.
+
+## Slike
+
+<figure markdown="span">
+  ![Buddhabrot](../assets/buddhabrot/buddhabrot.png){ width="420" }
+  <figcaption>4800 × 3600</figcaption>
+</figure>
+
+<div class="grid" markdown>
+
+<figure markdown="span">
+  ![Detalj Buddhabrota](../assets/buddhabrot/detalj1.png)
+</figure>
+
+<figure markdown="span">
+  ![Drugi detalj Buddhabrota](../assets/buddhabrot/detalj2.png)
+</figure>
+
+</div>

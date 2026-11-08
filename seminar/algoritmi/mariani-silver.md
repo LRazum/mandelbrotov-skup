@@ -23,4 +23,20 @@ Također je važno uočiti sljedeće, kada dijelimo pravokutnik na četiri manja
 2. *Bijeg u iteraciji n*: bijeg je otkriven u iteraciji n,
 3. *Neotkriven bijeg*: dosegnut je `MAX_ITER` te bijeg nije otkriven.
 
-Uz sve ovo koristimo sljedeću sigurnosnu provjeru, za pravokutnik koji trenutno obrađujemo provjeravamo sadrži li 0. Ako sadrži dijelimo ga na manje bez obzira na jednakost rezultata, ako ne sadrži nastavljamo normalno izvođenje algoritma. Jasno je zašto koristimo ovu zaštitu, zamislimo da pravokutnik omeđuje cijeli skup, sve točke na rubu pravokutnika ne pripadaju skupu pa bi automatski rekli isto za sav interior pravokutnika. 
+Uz sve ovo koristimo sljedeću sigurnosnu provjeru, za pravokutnik koji trenutno obrađujemo provjeravamo sadrži li 0. Ako sadrži dijelimo ga na manje bez obzira na jednakost rezultata, ako ne sadrži nastavljamo normalno izvođenje algoritma. Jasno je zašto koristimo ovu zaštitu, zamislimo da pravokutnik omeđuje cijeli skup, sve točke na rubu pravokutnika ne pripadaju skupu pa bi automatski rekli isto za sav interior pravokutnika.
+
+## Slike
+
+<div class="grid" markdown>
+
+<figure markdown="span">
+  ![Mandelbrotov skup iscrtan Mariani–Silver algoritmom](../assets/mariani-silver/cijeli_skup.png)
+  <figcaption>1200 × 900</figcaption>
+</figure>
+
+<figure markdown="span">
+  ![Isti prikaz s bijelim obrisima popunjenih pravokutnika](../assets/mariani-silver/pravokutnici.png)
+  <figcaption>1200 × 900</figcaption>
+</figure>
+
+</div>
