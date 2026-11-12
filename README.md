@@ -1,47 +1,48 @@
 # Vizualizacija Mandelbrotova skupa
 
-Repozitorij za samostalnu izradu seminarskog rada: matematika Mandelbrotova
-skupa i usporedba triju postupaka njegove vizualizacije, od osnovnih prema
-naprednijima. Autor treba razumjeti svaki odabrani postupak i moći ga
-samostalno objasniti.
+Seminarski rad o Mandelbrotovu skupu i postupcima njegove vizualizacije na
+računalu, izrađen na PMF-MO. Rad polazi od definicije skupa i kriterija bijega,
+a zatim obrađuje tri postupka, od jednostavnijega prema naprednijima.
 
-Odabrane teme su escape time, Mariani–Silver i Buddhabrot. Prema odluci autora
-od 7. studenoga 2026. Buddhabrot se obrađuje kroz ideju algoritma i nekoliko
-vizualizacija, bez pisanja koda.
+**Web-stranica rada:** <https://lrazum.github.io/mandelbrotov-skup/>
 
-Seminar, web-stranica i izlaganje izrađuju se na hrvatskom jeziku. Jedini ljudski
-autor i doprinositelj jest vlasnik repozitorija.
+- **Predaja rada:** 12. studenoga 2026.
+- **Izlaganje:** 13. studenoga 2026., 45 minuta, sa zadatkom za slušatelje.
+- **Autor:** vlasnik repozitorija ([LRazum](https://github.com/LRazum)).
 
-## Početak rada
+## Sadržaj rada
 
-1. Pročitaj [pravila projekta](AGENTS.md) i [pravila kolegija](docs/PRAVILA_KOLEGIJA.md).
-2. U [planu seminara](docs/plan/SEMINAR.md) odaberi sljedeći nedovršeni korak.
-3. Prati [protokol izmjena](docs/PROTOKOL_IZMJENA.md).
+| Cjelina | Stranica | Što sadrži |
+| --- | --- | --- |
+| Uvod | [`seminar/index.md`](seminar/index.md) | Motivacija i cilj seminara. |
+| Matematička podloga | [`seminar/podloga.md`](seminar/podloga.md) | Definicija Mandelbrotova skupa. |
+| Escape time algoritam | [`seminar/algoritmi/escape-time.md`](seminar/algoritmi/escape-time.md) | Kriterij bijega s dokazom, autorova implementacija u Pythonu i slike s parametrima. |
+| Mariani–Silver algoritam | [`seminar/algoritmi/mariani-silver.md`](seminar/algoritmi/mariani-silver.md) | Opis postupka adaptivne podjele pravokutnika i slike. |
+| Buddhabrot | [`seminar/algoritmi/buddhabrot.md`](seminar/algoritmi/buddhabrot.md) | Ideja algoritma i vizualizacije, bez vlastite implementacije. |
+| Literatura | [`seminar/literatura.md`](seminar/literatura.md) | Primarni i dopunski izvori. |
+| Uporaba umjetne inteligencije | [`seminar/uporaba-ai.md`](seminar/uporaba-ai.md) | Autorova izjava o korištenim AI alatima i njihovoj svrsi. |
 
-## Struktura
+Opseg je namjerno postupan: escape time je implementiran i služi kao osnova,
+Mariani–Silver je obrađen opisno kao ubrzanje istoga pristupa, a Buddhabrot kao
+drukčiji pogled na isti skup kroz ideju algoritma i vizualizacije. Zadatak za
+slušatelje daje se samo na izlaganju i nije dio web-stranice.
+
+## Struktura repozitorija
 
 | Putanja | Namjena |
 | --- | --- |
-| `docs/` | Pravila, plan, evidencija izvora i uporabe AI-ja; nije tekst za predaju. |
-| `seminar/` | Autorov tekst i matematika za web-stranicu rada. |
-| `prezentacija/` | Autorovi izvori slajdova i materijali za izlaganje. |
-| `src/` | Implementacije algoritama; autorstvo po datotekama navedeno je u [evidenciji AI-ja](docs/AI_UPORABA.md#autorstvo-koda). |
-| `examples/` | Primjeri pokretanja i parametri demonstracija. |
-| `web/` | Tehnička izvedba web-stranice, odvojena od sadržaja i algoritama. |
-| `assets/` | Slike i drugi materijali s evidentiranim podrijetlom. |
+| `seminar/` | Tekst i matematika web-stranice rada (Markdown s LaTeX formulama). |
+| `src/mandelbrot/` | Autorova implementacija escape time algoritma i iscrtavanja. |
+| `examples/` | Primjer pokretanja s parametrima demonstracije. |
+| `assets/` | Slike rezultata, razvrstane po algoritmima. |
+| `web/` | Tehnička izvedba web-stranice (MkDocs, tema Material, KaTeX). |
+| `docs/` | Radna dokumentacija: pravila, plan, evidencija izvora i uporabe AI-ja. Nije tekst za predaju. |
 
-## Trenutačno stanje
+Autorstvo koda po datotekama navedeno je u
+[evidenciji AI-ja](docs/AI_UPORABA.md#autorstvo-koda), a pregled radne
+dokumentacije u [kazalu](docs/INDEX.md).
 
-Postavljena je organizacija rada. Tekst, matematički rezultat, algoritmi,
-slajdovi i sadržaj web-stranice još nisu izrađeni. Jezik implementacije jest
-Python, a web se izrađuje alatom MkDocs s temom Material; format slajdova još
-nije odabran. Postavljen je tehnički kostur weba s praznim stranicama.
-
-AI smije pomagati u dopuštenim pripremnim i tehničkim poslovima. Prema pravilima
-kolegija autor sam piše tekst, matematiku i algoritamski kôd rada. Pojedinosti
-su u [AGENTS.md](AGENTS.md), a popis dokumentacije u [kazalu](docs/INDEX.md).
-
-## Pokretanje
+## Pokretanje primjera
 
 Potreban je Python 3.12 s modulom `venv` (na Ubuntuu paket `python3.12-venv`).
 
@@ -51,26 +52,29 @@ python3 -m venv .venv
 PYTHONPATH=src .venv/bin/python examples/escape_time_plot.py
 ```
 
-Ovisnosti su u `requirements.txt`.
+Primjer iscrtava cijeli skup u rezoluciji 1200 × 900 uz najviše 100 iteracija.
+Parametri slika objavljenih na stranici navedeni su uz same slike.
 
-## Web-stranica
-
-Tekst stranica piše se u Markdownu u mapi `seminar/`; formule se pišu kao u
-LaTeX-u, `$…$` u retku i `$$…$$` izlučeno. Slike se spremaju u `assets/` i na
-stranici navode kao `assets/slika.png` (iz `seminar/algoritmi/` kao
-`../assets/slika.png`). Isječak autorova koda uključuje se retkom
-`--8<-- "src/…"` unutar bloka koda, kao u `seminar/algoritmi/escape-time.md`.
-Redoslijed i naslovi stranica u izborniku određuju se u `web/mkdocs.yml`.
-
-Lokalni pregled s osvježavanjem pri svakoj izmjeni, na adresi
-<http://127.0.0.1:8000/mandelbrotov-skup/>:
+## Lokalna izgradnja web-stranice
 
 ```bash
 .venv/bin/pip install -r web/requirements.txt
 .venv/bin/mkdocs serve -f web/mkdocs.yml
 ```
 
+Stranica je tada dostupna na <http://127.0.0.1:8000/mandelbrotov-skup/> i
+osvježava se pri svakoj izmjeni. Redoslijed stranica u izborniku određen je u
+`web/mkdocs.yml`, a isječci koda uključuju se izravno iz `src/` pa prikazani kôd
+uvijek odgovara stvarnoj implementaciji.
+
 Svaki push na granu `main` pokreće `.github/workflows/web.yml`, koji gradi
-stranicu i objavljuje je na <https://lrazum.github.io/mandelbrotov-skup/>.
-Gradnja s `--strict` ne uspijeva ako postoji neispravna poveznica ili
-nedostaje uključena datoteka koda.
+stranicu s `--strict` i objavljuje je na GitHub Pages.
+
+## Uporaba umjetne inteligencije
+
+Tekst, matematika i algoritamski kôd rada autorov su samostalni rad. AI alati
+korišteni su za organizaciju repozitorija, tehničku izradu web-stranice,
+pravopisnu provjeru i pregled koda, u skladu s [pravilima projekta](AGENTS.md).
+Svaka uporaba evidentirana je u [evidenciji AI-ja](docs/AI_UPORABA.md), a
+autorova izjava objavljena je na stranici
+[Uporaba umjetne inteligencije](https://lrazum.github.io/mandelbrotov-skup/uporaba-ai/).
