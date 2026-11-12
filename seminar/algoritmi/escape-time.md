@@ -2,7 +2,7 @@
 Krećemo sa najjednostavijim algoritmom za vizualizaciju Mandelbrotovog skupa tzv. *Escape time algoritam*. Prije samog algoritma ćemo izvesti jednostavan uvijet na modul broja $z$ koja garantira da će niz nakon tog člana divergirati u beskonačnost.
 
 
-__Propozicija 1.1.__ Ako postoji $n \in \mathbb{N}$ takav da je $|z_n| > 2$, tada $|z_k| \xrightarrow{k \to \infty} \infty$.
+__Teorem 1.1.__ Ako postoji $n \in \mathbb{N}$ takav da je $|z_n| > 2$, tada $|z_k| \xrightarrow{k \to \infty} \infty$.
 
 *Dokaz:* Neka je $r = |z_n| > 2$ i $|c| \leq r$ (ako je $|c| > 2$, uzmemo $n = 1$ jer je $z_1 = c$). Tada je
 
